@@ -24,7 +24,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.slider.create');
     }
 
     /**

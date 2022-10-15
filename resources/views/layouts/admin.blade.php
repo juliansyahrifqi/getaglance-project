@@ -51,8 +51,9 @@
     @include('includes.admin.footer')
 </div>
     
-
+    @stack('prepend-script')
     @include('includes.admin.script')
+    @stack('addon-script')
     
 </body>
 </html>
