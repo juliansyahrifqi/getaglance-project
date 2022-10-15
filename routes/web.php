@@ -35,13 +35,20 @@ Route::get('/afiliasi', function () {
     return view('pages.afiliasi');
 });
 
-Route::get('/admin', function () {
-    return view('pages.admin.dashboard');
+// Route::get('/admin', function () {
+//     return view('pages.admin.dashboard');
+// });
+
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::prefix('admin')->middleware(['auth'])->group(function() {
+    Route::get('dashboard', function() {
+        return view('pages.admin.dashboard');
+    })->name('dashboard-admin');
+    Route::resource('slider', 'App\Http\Controllers\Admin\SliderController');
 });
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
