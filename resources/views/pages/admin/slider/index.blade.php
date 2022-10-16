@@ -47,25 +47,63 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                        Explorer 4.0
-                                        </td>
-                                        <td>Win 95+</td>
-                                        <td> 4</td>
-                                        <td>
-                                            <a class="btn btn-info btn-sm">
-                                                <i class="fas fa-edit"></i>
-                                                Edit
-                                            </a>
+                                    @if($sliders->isEmpty())
+                                        <div class="alert alert-danger">
+                                            Data slider tidak ada
+                                        </div>
+                                    @else
+                                        @php $i = 1; @endphp
 
-                                            <a class="btn btn-danger btn-sm">
-                                                <i class="fas fa-trash"></i>
-                                                Hapus
-                                            </a>
-                                        </td>
-                                    </tr>
+                                        @foreach($sliders as $slider) 
+                                            <tr>
+                                                <td>{{ $i++ }}</td>
+                                                <td>
+                                                    <img src="{{ Storage::url($slider->image) }}"  alt="{{ $slider->title }}" style="width: 150px;">
+                                                </td>
+                                                <td>{{ $slider->title }}</td>
+                                                <td>{{ $slider->description }}</td>
+                                                <td>
+                                                    <a class="btn btn-info btn-sm" href="{{ route('slider.edit', $slider->id) }}">
+                                                        <i class="fas fa-edit"></i>
+                                                        Edit
+                                                    </a>
+
+                                                    <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{$slider->id}}">
+                                                        <i class="fas fa-trash"></i>
+                                                        Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                            <div class="modal fade" id="deleteModal{{ $slider->id }}">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div   div class="modal-header">
+                                                            <h4 class="modal-title">Hapus Slider</h4>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Slider yang dipilih akan dihapus</p>
+                                                        </div>
+                                                        <div class="modal-footer justify-content-between">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                <form action="{{ route('slider.destroy', $slider->id) }}" method="POST">
+                                                                @method('delete')
+                                                                @csrf                                                
+                                                                <button type="submit" class="btn btn-danger">
+                                                                    Hapus
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                <!-- /.modal-content -->
+                                                </div>
+                                                <!-- /.modal-dialog -->
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 </tbody>
                             </table>
                         </div>
@@ -76,5 +114,7 @@
             </div>
         </div>
     </section>
+
+    
 
 @endsection

@@ -25,7 +25,8 @@ class SliderRequests extends FormRequest
     {
         return [
             'title' => 'max:255',
-            'description' => 'max:255'
+            'description' => 'max:255',
+            'image' => 'mimes:jpeg,jpg,png,gif|max:512'
         ];
     }
 }

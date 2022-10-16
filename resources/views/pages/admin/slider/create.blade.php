@@ -27,17 +27,33 @@
     <section class="content py-5">
         <div class="row">
             <div class="col-8 mx-auto">
-                <div class="card">
-                    <div class="card-body">
-                        <form action="">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Form Tambah Slider</h3>
+                    </div>
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <form action="{{ route('slider.store') }}" enctype="multipart/form-data" method="POST">
+                        @csrf
+
+                        <div class="card-body">
                             <div class="form-group">
                                 <label for="title">Judul Slider</label>
-                                <input type="text" id="title" name="title" class="form-control">
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul">
                             </div>
     
                             <div class="form-group">
                                 <label for="description">Deskripsi Slider</label>
-                                <textarea id="description" class="form-control" rows="4" name="description"></textarea>
+                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi"></textarea>
                             </div>
     
                             <label for="slider-image">Gambar Slider</label>
@@ -49,10 +65,12 @@
                             </div>
     
                             <img id="perview" src="" class="mt-3"> 
+                        </div>
 
-                            <button type="submit" class="btn btn-primary mt-3 btn-block">Tambah Slider</button>
-                        </form>
-                    </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary btn-block">Tambah Slider</button>
+                        </div>
+                    </form>
                     <!-- /.card-body -->
                 </div>
                  <!-- /.card -->

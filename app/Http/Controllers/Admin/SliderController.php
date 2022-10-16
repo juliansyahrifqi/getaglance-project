@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class SliderController extends Controller
@@ -14,7 +15,9 @@ class SliderController extends Controller
      */
     public function index()
     {
-        return view('pages.admin.slider.index');
+        return view('pages.admin.slider.index', [
+            'sliders' => Slider::all()
+        ]);
     }
 
     /**
@@ -35,7 +38,19 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'max:255',
+            'description' => 'max:255',
+            'image' => 'mimes:jpeg,jpg,png,gif|max:512'
+        ]);
+
+        $data = $request->all();
+
+        $data['image'] = $request->file('image')->store('assets/slider', 'public');
+
+        Slider::create($data);
+
+        return redirect()->route('slider.index')->with('success', 'Slider berhasil ditambahkan!');
     }
 
     /**
