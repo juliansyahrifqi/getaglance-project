@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Slider;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.home');
+    return view('pages.home', [
+        'sliders' => Slider::all(),
+    ]);
 });
 Route::get('/produk', function () {
     return view('pages.produk');

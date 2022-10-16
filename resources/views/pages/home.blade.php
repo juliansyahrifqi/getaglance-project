@@ -12,23 +12,22 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide">
-                    <img src="/assets/1.webp" alt="">
+                @foreach($sliders as $slider)
+                  <div class="swiper-slide">
+                      <img src="{{ Storage::url($slider->image) }}" alt="{{ $slider->title }}">
 
-                      <div class="swiper-content">
-                        <h2 class="swiper-content-title">LOREM IPSUM</h2>
-                        <p class="swiper-content-description mt-4">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ducimus officia architecto id eaque!
-                        </p>
-                        
-                        <a href="produk.html" class="text-decoration-none btn btn-swiper-content rounded-0 px-5 py-2 mt-4">
-                          Belanja Sekarang
-                        </a>
-                      </div>                    
-                </div>
-                <div class="swiper-slide">
-                    <img src="/assets/2.webp" alt="">
-                </div>
+                        <div class="swiper-content">
+                          <h2 class="swiper-content-title">{{ $slider->title }}</h2>
+                          <p class="swiper-content-description mt-4">
+                            {{ $slider->description }}
+                          </p>
+                          
+                          <a href="/produk" class="text-decoration-none btn btn-swiper-content rounded-0 px-5 py-2 mt-4">
+                            Belanja Sekarang
+                          </a>
+                        </div>                    
+                  </div>
+                @endforeach
             </div>
             <div class="swiper-pagination mb-3"></div>
         </div>

@@ -74,10 +74,12 @@
                                                         Edit
                                                     </a>
 
-                                                    <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{$slider->id}}">
-                                                        <i class="fas fa-trash"></i>
-                                                        Hapus
-                                                    </a>
+                                                    @if($slider->id != 1) 
+                                                        <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{$slider->id}}">
+                                                            <i class="fas fa-trash"></i>
+                                                            Hapus
+                                                        </a>
+                                                    @endif
                                                 </td>
                                             </tr>
 
