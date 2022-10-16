@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SliderController extends Controller
 {
@@ -72,7 +73,9 @@ class SliderController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('pages.admin.slider.edit', [
+            'slider' => Slider::findOrFail($id)
+        ]);
     }
 
     /**
@@ -84,7 +87,28 @@ class SliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $slider = Slider::findOrFail($id);
+
+        $request->validate([
+            'title' => 'max:255',
+            'description' => 'max:255',
+            'image' => 'mimes:jpeg,jpg,png,gif|max:512'
+        ]);
+
+        $data = $request->all();
+
+        if($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('assets/slider', 'public');
+            Storage::delete($slider->image);
+        }
+
+        try {
+            $slider->update($data);
+
+            return redirect()->route('slider.index')->with('success', 'Slider berhasil diubah!');
+        } catch(\Exception $e) {
+            return redirect()->route('slider.index')->with('errors', 'Slider gagal diubah!');
+        }
     }
 
     /**

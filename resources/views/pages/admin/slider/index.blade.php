@@ -36,7 +36,13 @@
                             </a>
                         </div>
                         <div class="card-body">
-                            <table id="example2" class="table table-bordered table-hover">
+                            @if ($message = Session::get('success'))
+                                <div class="alert alert-success">
+                                    {{ $message }}
+                                </div>
+                            @endif
+
+                            <table id="myTable" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>No.</th>
