@@ -25,6 +25,12 @@
     <link rel="stylesheet" href="/vendor/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- JQVMap -->
     <link rel="stylesheet" href="/vendor/plugins/jqvmap/jqvmap.min.css">
+    
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/vendor/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/vendor/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="/vendor/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    
     <!-- Theme style -->
     <link rel="stylesheet" href="/vendor/dist/css/adminlte.min.css">
     <!-- overlayScrollbars -->

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class SliderController extends Controller
@@ -99,7 +100,7 @@ class SliderController extends Controller
 
         if($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('assets/slider', 'public');
-            Storage::delete($slider->image);
+            File::delete($slider->image);
         }
 
         try {
@@ -119,6 +120,12 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $slider = Slider::findOrFail($id);
+
+        if($slider->delete()) {
+            Storage::delete($slider->image);
+
+            return redirect()->route('slider.index')->with('success', 'Slider berhasil dihapus!');
+        }
     }
 }

@@ -28,3 +28,18 @@
 <script src="/vendor/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/vendor/dist/js/adminlte.js"></script>
+
+<script src="/vendor/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/vendor/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="/vendor/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="/vendor/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+
+    <script>
+  $(function () {
+    $("#myTable").DataTable({
+      "responsive": true, 
+      "lengthChange": false, 
+      "autoWidth": false,
+    });
+  });
+</script>
