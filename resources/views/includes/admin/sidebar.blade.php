@@ -41,6 +41,15 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{ route('talent-section.index') }}" class="nav-link {{ (request()->is('admin/talent-section*')) ? 'active' : ''}}">
+                        <i class="nav-icon far fa-image"></i>
+                        <p>
+                            Talent
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{ route('quote.index') }}" class="nav-link {{ (request()->is('admin/quote*')) ? 'active' : ''}}">
                         <i class="nav-icon far fa-image"></i>
                         <p>

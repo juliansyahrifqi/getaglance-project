@@ -70,17 +70,17 @@
               <div class="col-sm ml-4 mt-4">
                 <div class="talent-divider d-flex align-items-center mb-4">
                   <hr class="talent-title-divider">
-                  <p class="my-0 ml-3 talent-title">Our Talent</p>
+                  <p class="my-0 ml-3 talent-title">{{ $talentSection->title }}</p>
                 </div>
 
                 <div class="talent-content">
-                  <h2>Pilih talent sesuai dengan yang kamu inginkan</h2>
+                  <h2>{{ $talentSection->subtitle }}</h2>
   
                   <p class="talent-description">
-                    Kami selalu berusaha untuk memberikan apa yang klien inginkan
+                    {{ $talentSection->description }}
                   </p>
   
-                  <a href="talent.html" type="button" class="btn-talent mt-4 text-decoration-none">Lihat Selengkapnya ...</a>
+                  <a href="/talent" type="button" class="btn-talent mt-4 text-decoration-none">Lihat Selengkapnya ...</a>
                 </div>
               </div>
             </div>

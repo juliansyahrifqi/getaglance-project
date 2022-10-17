@@ -3,6 +3,7 @@
 use App\Models\Kategori;
 use App\Models\Quote;
 use App\Models\Slider;
+use App\Models\TalentSection;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,7 @@ Route::get('/', function () {
         'sliders' => Slider::all(),
         'categories' => Kategori::all(),
         'quote' => Quote::find(1),
+        'talentSection' => TalentSection::find(1),
     ]);
 });
 Route::get('/produk', function () {
@@ -58,6 +60,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function() {
     Route::resource('slider', 'App\Http\Controllers\Admin\SliderController');
     Route::resource('kategori', 'App\Http\Controllers\Admin\KategoriController');
     Route::resource('quote', 'App\Http\Controllers\Admin\QuoteController');
+    Route::resource('talent-section', 'App\Http\Controllers\Admin\TalentSectionController');
 });
 
 require __DIR__.'/auth.php';
