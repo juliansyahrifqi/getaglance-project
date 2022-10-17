@@ -52,6 +52,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function() {
         return view('pages.admin.dashboard');
     })->name('dashboard-admin');
     Route::resource('slider', 'App\Http\Controllers\Admin\SliderController');
+    Route::resource('kategori', 'App\Http\Controllers\Admin\KategoriController');
 });
 
 require __DIR__.'/auth.php';
