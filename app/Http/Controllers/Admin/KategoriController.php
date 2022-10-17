@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class KategoriController extends Controller
 {
@@ -27,7 +30,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.kategori.create');
     }
 
     /**
@@ -38,7 +41,19 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_kategori' => 'max:255',
+            'image' => 'mimes:jpeg,jpg,png,gif|max:512'
+        ]);
+
+        $data = $request->all();
+
+        $data['image'] = $request->file('image')->store('assets/kategori', 'public');
+        $data['slug'] = Str::of($request->nama_kategori)->slug('-');
+
+        Kategori::create($data);
+
+        return redirect()->route('kategori.index')->with('success', 'Kategori berhasil ditambahkan!');
     }
 
     /**
@@ -60,7 +75,9 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('pages.admin.kategori.edit', [
+            'category' => Kategori::findOrFail($id)
+        ]);
     }
 
     /**
@@ -72,7 +89,29 @@ class KategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $kategori = Kategori::findOrFail($id);
+
+        $request->validate([
+            'nama_kategori' => 'max:255',
+            'image' => 'mimes:jpeg,jpg,png,gif|max:512'
+        ]);
+
+        $data = $request->all();
+
+        if($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('assets/kategori', 'public');
+            File::delete($kategori->image);
+        }
+
+        $kategori['slug'] = Str::of($request->nama_kategori)->slug('-');
+
+        try {
+            $kategori->update($data);
+
+            return redirect()->route('kategori.index')->with('success', 'Kategori berhasil diubah!');
+        } catch(\Exception $e) {
+            return redirect()->route('kategori.index')->with('errors', 'Kategori gagal diubah!');
+        }
     }
 
     /**
@@ -83,6 +122,12 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $kategori = Kategori::findOrFail($id);
+
+        if($kategori->delete()) {
+            Storage::delete($kategori->image);
+
+            return redirect()->route('kategori.index')->with('success', 'Kategori berhasil dihapus!');
+        }
     }
 }

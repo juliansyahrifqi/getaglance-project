@@ -30,9 +30,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="{{ route('slider.create') }}" class="btn btn-success">
+                            <a href="{{ route('kategori.create') }}" class="btn btn-success">
                                 <i class="fas fa-plus"></i>
-                                Tambah Slider
+                                Tambah Kategori
                             </a>
                         </div>
                         <div class="card-body">
@@ -72,12 +72,10 @@
                                                         Edit
                                                     </a>
 
-                                                    @if($category->id != 1) 
-                                                        <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{$category->id}}">
-                                                            <i class="fas fa-trash"></i>
-                                                            Hapus
-                                                        </a>
-                                                    @endif
+                                                    <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{$category->id}}">
+                                                        <i class="fas fa-trash"></i>
+                                                        Hapus
+                                                    </a>
                                                 </td>
                                             </tr>
 
