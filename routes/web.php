@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Kategori;
 use App\Models\Slider;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.home', [
         'sliders' => Slider::all(),
+        'categories' => Kategori::all(),
     ]);
 });
 Route::get('/produk', function () {

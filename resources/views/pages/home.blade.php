@@ -38,44 +38,20 @@
             <h1 class="h2 category-title text-center">Kategori</h1>
             <div class="container category-wrapper mt-5">
                 <div class="row category-list-wrapper">
-                    <div class="col-12 col-md-4 mt-2">
-                        <a href="produk.html" class="text-decoration-none">
-                            <div class="category-list d-flex flex-column justify-content-center align-items-center" style="background: url(/assets/category-1.webp) no-repeat top center;
-                            background-size: cover;
-                            height: 50vh;
-                            transition: all 0.3s;
-                            cursor: pointer;">
-                                <h3 class="category-list-title text-white">Muslim</h3>
-                                <button class="btn-category-list mt-2 px-4 py-2">Selengkapnya</button>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-12 col-md-4 mt-2">
-                      <a href="produk.html" class="text-decoration-none">
-                        <div class="category-list d-flex flex-column justify-content-center align-items-center" style="background: url(/assets/category-2.webp) no-repeat center;
-                        background-size: cover;
-                        height: 50vh;
-                        transition: all 0.3s;
-                        cursor: pointer;">
-                            <h3 class="category-list-title text-white">Dress</h3>
-                            <button class="btn-category-list mt-2 px-4 py-2">Selengkapnya</button>
-                        </div>
-                      </a>
-                    </div>
-
-                    <div class="col-12 col-md-4 mt-2">
-                      <a href="produk.html" class="text-decoration-none">
-                        <div class="category-list d-flex flex-column justify-content-center align-items-center" style="background: url(/assets/category-3.webp) no-repeat center;
-                        background-size: cover;
-                        height: 50vh;
-                        transition: all 0.3s;
-                        cursor: pointer;">
-                            <h3 class="category-list-title text-white">Category</h3>
-                            <button class="btn-category-list mt-2 px-4 py-2">Selengkapnya</button>
-                        </div>
-                      </a>
-                    </div>
+                    @foreach($categories as $category)
+                      <div class="col-12 col-md-4 mt-2">
+                          <a href="/produk" class="text-decoration-none">
+                              <div class="category-list d-flex flex-column justify-content-center align-items-center" style="background: url('{{ Storage::url($category->image) }}') no-repeat top center;
+                              background-size: cover;
+                              height: 50vh;
+                              transition: all 0.3s;
+                              cursor: pointer;">
+                                  <h3 class="category-list-title text-white">{{ $category->nama_kategori }}</h3>
+                                  <button class="btn-category-list mt-2 px-4 py-2">Selengkapnya</button>
+                              </div>
+                          </a>
+                      </div>
+                    @endforeach
                 </div>
             </div>
         </section>
