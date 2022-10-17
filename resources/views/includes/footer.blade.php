@@ -10,28 +10,24 @@
 
             <div class="col-md-6 col-lg-2 mt-3">
             <h5 class="footer-title">Informasi</h5>
-            <a href="tentang.html" class="text-white mt-4">
+            <a href="/about" class="text-white mt-4">
                 <p class="footer-link mt-4">/about</p>
             </a>
 
-            <a href="produk.html" class="text-white mt-4">
+            <a href="/produk" class="text-white mt-4">
                 <p class="footer-link mt-4">/produk</p>
             </a>
 
-            <a href="artikel.html" class="text-white mt-4">
-                <p class="footer-link mt-4">/artikel</p>
-            </a>
-
-            <a href="talent.html" class="text-white mt-4">
+            <a href="/talent" class="text-white mt-4">
                 <p class="footer-link mt-4">/talent</p>
             </a>
 
-            <a href="hubungi.html" class="text-white mt-4">
-                <p class="footer-link mt-4">/contact us</p>
+            <a href="/kontak" class="text-white mt-4">
+                <p class="footer-link mt-4">/kontak</p>
             </a>
 
-            <a href="affiliate.html" class="text-white mt-4">
-                <p class="footer-link mt-4">/affiliates</p>
+            <a href="/afiliasi" class="text-white mt-4">
+                <p class="footer-link mt-4">/afiliasi</p>
             </a>
             </div>
 

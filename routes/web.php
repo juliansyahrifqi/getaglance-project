@@ -28,9 +28,9 @@ Route::get('/', function () {
 Route::get('/produk', function () {
     return view('pages.produk');
 });
-Route::get('/artikel', function () {
-    return view('pages.artikel');
-});
+// Route::get('/artikel', function () {
+//     return view('pages.artikel');
+// });
 Route::get('/talent', function () {
     return view('pages.talent');
 });
