@@ -92,8 +92,8 @@
         <section class="quote">
           <div class="container">
             <div class="quote-wrapper d-flex flex-column align-items-center justify-content-center">
-              <h1 class="h4 quote-title text-center">Flexible Wardrobe</h1>
-              <p class="mt-3 quote-description text-center"><i>Thoughtfully-designed for anything from casual and workwear to all of life's special occasions.</i></p>
+              <h1 class="h4 quote-title text-center">{{ $quote->title }}</h1>
+              <p class="mt-3 quote-description text-center"><i>{{ $quote->description }}</i></p>
             </div>
           </div>
         </section>

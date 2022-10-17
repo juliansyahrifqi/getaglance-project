@@ -39,6 +39,15 @@
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('quote.index') }}" class="nav-link {{ (request()->is('admin/quote*')) ? 'active' : ''}}">
+                        <i class="nav-icon far fa-image"></i>
+                        <p>
+                            Quote
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
       <!-- /.sidebar-menu -->
