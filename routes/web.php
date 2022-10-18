@@ -4,6 +4,7 @@ use App\Models\Kategori;
 use App\Models\Quote;
 use App\Models\Slider;
 use App\Models\TalentSection;
+use App\Models\Tentang;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,7 +36,9 @@ Route::get('/talent', function () {
     return view('pages.talent');
 });
 Route::get('/tentang', function () {
-    return view('pages.tentang');
+    return view('pages.tentang', [
+        'tentang' => Tentang::find(1),
+    ]);
 });
 Route::get('/kontak', function () {
     return view('pages.kontak');
@@ -61,6 +64,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function() {
     Route::resource('kategori', 'App\Http\Controllers\Admin\KategoriController');
     Route::resource('quote', 'App\Http\Controllers\Admin\QuoteController');
     Route::resource('talent-section', 'App\Http\Controllers\Admin\TalentSectionController');
+    Route::resource('tentang', 'App\Http\Controllers\Admin\TentangController');
 });
 
 require __DIR__.'/auth.php';

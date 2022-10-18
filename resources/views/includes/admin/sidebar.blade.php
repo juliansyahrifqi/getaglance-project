@@ -57,6 +57,15 @@
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('tentang.index') }}" class="nav-link {{ (request()->is('admin/tentang*')) ? 'active' : ''}}">
+                        <i class="nav-icon far fa-image"></i>
+                        <p>
+                            Halaman Tentang
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
       <!-- /.sidebar-menu -->
