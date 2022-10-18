@@ -77,6 +77,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function() {
     Route::resource('kontak', 'App\Http\Controllers\Admin\KontakController');
     Route::resource('talent', 'App\Http\Controllers\Admin\TalentController');
     Route::resource('afiliasi', 'App\Http\Controllers\Admin\AfiliasiController');
+    Route::resource('informasi', 'App\Http\Controllers\Admin\InformationController');
 });
 
 require __DIR__.'/auth.php';

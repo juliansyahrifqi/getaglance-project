@@ -20,6 +20,25 @@
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-header">INFORMASI</li>
+                <li class="nav-item">
+                    <a href="{{ route('informasi.index') }}" class="nav-link {{ (request()->is('admin/informasi*')) ? 'active' : ''}}">
+                        <i class="nav-icon far fa-image"></i>
+                        <p>
+                            Informasi Usaha
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('slider.index') }}" class="nav-link {{ (request()->is('admin/slider*')) ? 'active' : ''}}">
+                        <i class="nav-icon far fa-image"></i>
+                        <p>
+                            Sosial Media
+                        </p>
+                    </a>
+                </li>
           
                 <li class="nav-header">HALAMAN UTAMA</li>
                 <li class="nav-item">
