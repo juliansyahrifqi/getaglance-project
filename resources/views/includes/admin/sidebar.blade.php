@@ -32,35 +32,27 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route('kategori.index') }}" class="nav-link {{ (request()->is('admin/kategori*')) ? 'active' : ''}}">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Kategori
-                        </p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
                     <a href="{{ route('talent-section.index') }}" class="nav-link {{ (request()->is('admin/talent-section*')) ? 'active' : ''}}">
-                        <i class="nav-icon far fa-image"></i>
+                        <i class="nav-icon fa fa-user"></i>
                         <p>
-                            Talent
+                            Talent Section
                         </p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="{{ route('quote.index') }}" class="nav-link {{ (request()->is('admin/quote*')) ? 'active' : ''}}">
-                        <i class="nav-icon far fa-image"></i>
+                        <i class="nav-icon fa fa-quote-left"></i>
                         <p>
-                            Quote
+                            Quote Section
                         </p>
                     </a>
                 </li>
 
+                <li class="nav-header">HALAMAN LAIN</li>
                 <li class="nav-item">
                     <a href="{{ route('tentang.index') }}" class="nav-link {{ (request()->is('admin/tentang*')) ? 'active' : ''}}">
-                        <i class="nav-icon far fa-image"></i>
+                        <i class="nav-icon fa fa-info"></i>
                         <p>
                             Halaman Tentang
                         </p>
@@ -69,18 +61,29 @@
 
                 <li class="nav-item">
                     <a href="{{ route('kontak.index') }}" class="nav-link {{ (request()->is('admin/kontak*')) ? 'active' : ''}}">
-                        <i class="nav-icon far fa-image"></i>
+                        <i class="nav-icon fa fa-address-card"></i>
                         <p>
                             Halaman Kontak
                         </p>
                     </a>
                 </li>
 
+                <li class="nav-header">TALENT</li>
                 <li class="nav-item">
                     <a href="{{ route('talent.index') }}" class="nav-link {{ (request()->is('admin/talent*')) ? 'active' : ''}}">
-                        <i class="nav-icon far fa-image"></i>
+                        <i class="nav-icon fa fa-users"></i>
                         <p>
-                            Talent
+                            List Talent
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-header">PRODUK</li>
+                <li class="nav-item">
+                    <a href="{{ route('kategori.index') }}" class="nav-link {{ (request()->is('admin/kategori*')) ? 'active' : ''}}">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>
+                            Kategori
                         </p>
                     </a>
                 </li>
