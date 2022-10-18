@@ -4,6 +4,7 @@ use App\Models\Kategori;
 use App\Models\Kontak;
 use App\Models\Quote;
 use App\Models\Slider;
+use App\Models\Talent;
 use App\Models\TalentSection;
 use App\Models\Tentang;
 use Illuminate\Support\Facades\Route;
@@ -34,7 +35,9 @@ Route::get('/produk', function () {
 //     return view('pages.artikel');
 // });
 Route::get('/talent', function () {
-    return view('pages.talent');
+    return view('pages.talent', [
+        'talents' => Talent::all()
+    ]);
 });
 Route::get('/tentang', function () {
     return view('pages.tentang', [
@@ -69,6 +72,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function() {
     Route::resource('talent-section', 'App\Http\Controllers\Admin\TalentSectionController');
     Route::resource('tentang', 'App\Http\Controllers\Admin\TentangController');
     Route::resource('kontak', 'App\Http\Controllers\Admin\KontakController');
+    Route::resource('talent', 'App\Http\Controllers\Admin\TalentController');
 });
 
 require __DIR__.'/auth.php';

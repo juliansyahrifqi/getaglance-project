@@ -75,6 +75,15 @@
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('talent.index') }}" class="nav-link {{ (request()->is('admin/talent*')) ? 'active' : ''}}">
+                        <i class="nav-icon far fa-image"></i>
+                        <p>
+                            Talent
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
       <!-- /.sidebar-menu -->
