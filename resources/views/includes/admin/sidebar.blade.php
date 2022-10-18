@@ -68,6 +68,15 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ route('afiliasi.index') }}" class="nav-link {{ (request()->is('admin/afiliasi*')) ? 'active' : ''}}">
+                        <i class="nav-icon fa fa-briefcase"></i>
+                        <p>
+                            Halaman Afiliasi
+                        </p>
+                    </a>
+                </li>
+
                 <li class="nav-header">TALENT</li>
                 <li class="nav-item">
                     <a href="{{ route('talent.index') }}" class="nav-link {{ (request()->is('admin/talent*')) ? 'active' : ''}}">

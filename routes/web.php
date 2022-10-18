@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Afiliasi;
 use App\Models\Kategori;
 use App\Models\Kontak;
 use App\Models\Quote;
@@ -50,7 +51,9 @@ Route::get('/kontak', function () {
     ]);
 });
 Route::get('/afiliasi', function () {
-    return view('pages.afiliasi');
+    return view('pages.afiliasi', [
+        'afiliasi' => Afiliasi::findOrFail(1)
+    ]);
 });
 
 // Route::get('/admin', function () {
@@ -73,6 +76,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function() {
     Route::resource('tentang', 'App\Http\Controllers\Admin\TentangController');
     Route::resource('kontak', 'App\Http\Controllers\Admin\KontakController');
     Route::resource('talent', 'App\Http\Controllers\Admin\TalentController');
+    Route::resource('afiliasi', 'App\Http\Controllers\Admin\AfiliasiController');
 });
 
 require __DIR__.'/auth.php';
