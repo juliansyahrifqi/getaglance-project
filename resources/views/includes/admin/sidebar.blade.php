@@ -24,7 +24,7 @@
                 <li class="nav-header">INFORMASI</li>
                 <li class="nav-item">
                     <a href="{{ route('informasi.index') }}" class="nav-link {{ (request()->is('admin/informasi*')) ? 'active' : ''}}">
-                        <i class="nav-icon far fa-image"></i>
+                        <i class="nav-icon fa fa-info"></i>
                         <p>
                             Informasi Usaha
                         </p>
