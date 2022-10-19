@@ -6,7 +6,9 @@
 
 
         @if($information->image) 
-            <img src="{{ Storage::url($information->image) }}" alt="{{ $information->name }}" class="navbar-brand navbar-brand-logo nav-link-logo nav-link-logo-image m-0 text-center" style="width: 25%;">
+            <a href="">
+                <img src="{{ Storage::url($information->image) }}" alt="{{ $information->name }}" class="navbar-brand navbar-brand-logo nav-link-logo nav-link-logo-image m-0 text-center" style="width: 25%;">
+            </a>
         @else 
             <a href="/" class="navbar-brand nav-link-logo m-0">{{ $information->name }}</a>
         @endif
@@ -22,7 +24,9 @@
                 </li>
                 <li class="nav-item {{ request()->is('/') ? 'active' : '' }} text-center" >
                     @if($information->image) 
-                        <img src="{{ Storage::url($information->image) }}" alt="{{ $information->name }}" class="navbar-brand nav-link-logo nav-link-logo-image m-0 text-center" style="width: 50%;">
+                        <a href="/">
+                            <img src="{{ Storage::url($information->image) }}" alt="{{ $information->name }}" class="navbar-brand nav-link-logo nav-link-logo-image m-0 text-center" style="width: 50%;">
+                        </a>
                     @else 
                         <a href="/" class="navbar-brand nav-link-logo m-0">{{ $information->name }}</a>
                     @endif
