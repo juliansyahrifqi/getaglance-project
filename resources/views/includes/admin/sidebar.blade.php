@@ -32,8 +32,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route('slider.index') }}" class="nav-link {{ (request()->is('admin/slider*')) ? 'active' : ''}}">
-                        <i class="nav-icon far fa-image"></i>
+                    <a href="{{ route('social-media.index') }}" class="nav-link {{ (request()->is('admin/social-media*')) ? 'active' : ''}}">
+                        <i class="nav-icon fa fa-hashtag"></i>
                         <p>
                             Sosial Media
                         </p>
