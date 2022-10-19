@@ -41,8 +41,8 @@ class SliderController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'max:255',
-            'description' => 'max:255',
+            'title' => 'required|max:255',
+            'description' => 'required|max:255',
             'image' => 'mimes:jpeg,jpg,png,gif|max:512'
         ]);
 
@@ -91,8 +91,8 @@ class SliderController extends Controller
         $slider = Slider::findOrFail($id);
 
         $request->validate([
-            'title' => 'max:255',
-            'description' => 'max:255',
+            'title' => 'required|max:255',
+            'description' => 'required|max:255',
             'image' => 'mimes:jpeg,jpg,png,gif|max:512'
         ]);
 

@@ -92,7 +92,7 @@ class KategoriController extends Controller
         $kategori = Kategori::findOrFail($id);
 
         $request->validate([
-            'nama_kategori' => 'max:255',
+            'nama_kategori' => 'required|max:255',
             'image' => 'mimes:jpeg,jpg,png,gif|max:512'
         ]);
 

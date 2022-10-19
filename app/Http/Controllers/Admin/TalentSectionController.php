@@ -76,9 +76,9 @@ class TalentSectionController extends Controller
         $talentSection = TalentSection::findOrFail($id);
 
         $request->validate([
-            'title' => 'max:255',
-            'subtitle' => 'max:255',
-            'description' => 'max:255',
+            'title' => 'required|max:255',
+            'subtitle' => 'required|max:255',
+            'description' => 'required|max:255',
             'image' => 'mimes:jpeg,jpg,png,gif|max:512'
         ]);
 

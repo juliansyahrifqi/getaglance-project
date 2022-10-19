@@ -16,7 +16,7 @@ class QuoteController extends Controller
     public function index()
     {
         return view('pages.admin.quote.index', [
-            'quote' => Quote::find(1),
+            'quote' => Quote::findOrFail(1),
         ]);
     }
 
@@ -75,8 +75,8 @@ class QuoteController extends Controller
         $quote = Quote::findOrFail($id);
 
         $request->validate([
-            'title' => 'max:255',
-            'description' => 'max:255'
+            'title' => 'required|max:255',
+            'description' => 'required|max:255'
         ]);
 
         $data = $request->all();
