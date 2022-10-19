@@ -4,7 +4,12 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <a href="index.html" class="navbar-brand navbar-brand-logo">LOGO</a>
+
+        @if($information->image) 
+            <img src="{{ Storage::url($information->image) }}" alt="{{ $information->name }}" class="navbar-brand navbar-brand-logo nav-link-logo nav-link-logo-image m-0 text-center" style="width: 25%;">
+        @else 
+            <a href="/" class="navbar-brand nav-link-logo m-0">{{ $information->name }}</a>
+        @endif
         
         <div class="collapse navbar-collapse" id="navbarDropdown">
             <ul class="navbar-nav mr-auto py-3 px-3 d-flex align-items-center justify-content-between w-100
@@ -15,8 +20,12 @@
                 <li class="nav-item {{ request()->is('talent') ? 'active' : '' }}">
                     <a class="nav-link" href="/talent">Talent</a>
                 </li>
-                <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
-                    <a class="navbar-brand nav-link-logo m-0" href="/">LOGO</a>
+                <li class="nav-item {{ request()->is('/') ? 'active' : '' }} text-center" >
+                    @if($information->image) 
+                        <img src="{{ Storage::url($information->image) }}" alt="{{ $information->name }}" class="navbar-brand nav-link-logo nav-link-logo-image m-0 text-center" style="width: 50%;">
+                    @else 
+                        <a href="/" class="navbar-brand nav-link-logo m-0">{{ $information->name }}</a>
+                    @endif
                 </li>
                 <li class="nav-item {{ request()->is('tentang') ? 'active' : '' }}">
                     <a class="nav-link" href="/tentang">Tentang</a>

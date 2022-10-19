@@ -86,7 +86,7 @@ class InformationController extends Controller
         $data = $request->all();
 
         if($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('assets/slider', 'public');
+            $data['image'] = $request->file('image')->store('assets/information', 'public');
             File::delete($information->image);
         }
 

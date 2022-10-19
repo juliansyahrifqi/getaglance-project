@@ -4,7 +4,7 @@
             <div class="col-md-6 col-lg-4 mt-3">
             <h4 class="footer-title">Tentang Kami</h4>
             <p class="footer-about-us mt-4">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                {{ $information->description }}
             </p>
             </div>
 
@@ -47,19 +47,7 @@
                     <div class="square">
                         <img class="email-icon" src="./assets/icon/email.svg" alt="Email Icon">
                     </div>
-                    <p class="mb-0 ml-2 text-footer">project@gmail.com</p>
-                </div>
-
-                <div class="d-flex align-items-center mt-2">
-                    <div class="square">
-                        <img class="email-icon" src="./assets/icon/location.svg" alt="Email Icon">
-                    </div>
-                    
-                    <a href="https://goo.gl/maps/Q9R4D9N8bsqWKnnE8" target="_blank" rel="noreferrer" class="text-white">
-                        <div class="address">
-                            <p class="mb-0 ml-2 text-footer">Jl. Lombok Nomor 119 Kelurahan Nusa Dua Kecamatan Nusa Tenggara Kota Lombok, NTT</p>
-                        </div>
-                    </a>
+                    <p class="mb-0 ml-2 text-footer">{{ $information->email }}</p>
                 </div>
             </div>
 
@@ -67,23 +55,20 @@
                 <h4 class="footer-title">Sosial Media</h4>
 
                 <div class="social-media mt-4">
-                    <a href="https://www.instagram.com" target="_blank" rel="noreferrer" class="text-white">
-                    <div class="instagram d-flex align-items-center">
-                        <div class="square">
-                        <img clas="instagram-icon" src="./assets/icon/instagram.svg" alt="Instagram Icon">
-                        </div>
-                        <p class="mb-0 ml-2 text-footer">@instagram.project</p>
-                    </div>  
-                    </a>
+                    @if(!$socials->isEmpty())
+ 
+                        @foreach($socials as $social)
 
-                    <a href="https://twitter.com" target="_blank" rel="noreferrer" class="text-white">
-                    <div class="twitter d-flex align-items-center mt-3">
-                        <div class="square">
-                        <img class="twitter-icon" src="./assets/icon/twitter.svg" alt="Twitter Icon">
-                        </div>
-                        <p class="mb-0 ml-2 text-footer">@twitter.project</p>
-                    </div>
-                    </a>
+                            <a href="https://www.instagram.com" target="_blank" rel="noreferrer" class="text-white">
+                                <div class="instagram d-flex align-items-center">
+                                    <div class="square">
+                                    <img clas="instagram-icon" src="{{ Storage::url($social->icon) }}" alt="{{ $social->name}}-icon">
+                                    </div>
+                                    <p class="mb-0 ml-2 text-footer">{{ $social->account_name }}</p>
+                                </div>  
+                            </a>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>
