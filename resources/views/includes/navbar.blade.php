@@ -9,6 +9,7 @@
             <a href="">
                 <img src="{{ Storage::url($information->image) }}" alt="{{ $information->name }}" class="navbar-brand navbar-brand-logo nav-link-logo nav-link-logo-image m-0 text-center" style="width: 25%;">
             </a>
+            
         @else 
             <a href="/" class="navbar-brand nav-link-logo m-0">{{ $information->name }}</a>
         @endif

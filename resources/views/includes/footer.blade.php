@@ -60,9 +60,9 @@
                         @foreach($socials as $social)
 
                             <a href="https://www.instagram.com" target="_blank" rel="noreferrer" class="text-white">
-                                <div class="instagram d-flex align-items-center">
+                                <div class="d-flex align-items-center mt-3">
                                     <div class="square">
-                                    <img clas="instagram-icon" src="{{ Storage::url($social->icon) }}" alt="{{ $social->name}}-icon">
+                                    <img class="social-icon" src="{{ Storage::url($social->icon) }}" alt="{{ $social->name}}-icon">
                                     </div>
                                     <p class="mb-0 ml-2 text-footer">{{ $social->account_name }}</p>
                                 </div>  

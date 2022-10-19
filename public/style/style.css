@@ -450,5 +450,8 @@ footer {
     color: #636363;
     opacity: 0.3;
 }
-
+.social-icon {
+    width: 25px;
+    height: 25px;
+}
 /* end of footer section */
