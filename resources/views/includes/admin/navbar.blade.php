@@ -15,9 +15,13 @@
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                    Logout
-                </a>
+                <!-- Authentication -->
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="dropdown-item">
+                        {{ __('Log Out') }}
+                    </a>
+                </form>
             </div>
         </li>
     </ul>
