@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Afiliasi;
+use App\Models\Information;
 use App\Models\Kategori;
 use App\Models\Kontak;
 use App\Models\Quote;
@@ -39,7 +40,8 @@ Route::get('/produk', function () {
 // });
 Route::get('/talent', function () {
     return view('pages.talent', [
-        'talents' => Talent::all()
+        'talents' => Talent::all(),
+        'whatsapp' => Information::first()->whatsapp,
     ]);
 });
 Route::get('/tentang', function () {

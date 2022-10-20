@@ -32,8 +32,7 @@
                                                 <p class="talent-description my-0 ml-2">{{ $talent->instagram }}</p>
                                             </div>
                                             
-
-                                            <a href="https://wa.me/6282127788165?text=Halo" class="btn btn-konsul-talent mt-5">
+                                            <a href="https://wa.me/{{ $whatsapp }}?text=Halo%2C%20Glance.%20Saya%20mau%20konsultasi%20dengan%20talent%20{{$talent->name}}" class="btn btn-konsul-talent mt-5">
                                                 Mulai Konsultasi
                                             </a>
                                         </div>
