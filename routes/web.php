@@ -30,7 +30,9 @@ Route::get('/', function () {
     ]);
 });
 Route::get('/produk', function () {
-    return view('pages.produk');
+    return view('pages.produk', [
+        'categories' => Kategori::all(),
+    ]);
 });
 // Route::get('/artikel', function () {
 //     return view('pages.artikel');

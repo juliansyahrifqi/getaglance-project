@@ -15,13 +15,9 @@
                         </div>
                     
                         <div class="card-body">
-                            <p class="card-filter-kategori-list"><a role="button">Aksesoris</a></p>
-    
-                            <p class="card-filter-kategori-list"><a role="button">Dress</a></p>
-    
-                            <p class="card-filter-kategori-list"><a role="button">Hijab</a></p>
-    
-                            <p class="card-filter-kategori-list"><a role="button">Kemeja</a></p>
+                            @foreach($categories as $category)
+                                <p class="card-filter-kategori-list"><a role="button">{{ $category->nama_kategori }}</a></p>
+                            @endforeach
                         </div>
 
                       </div>
