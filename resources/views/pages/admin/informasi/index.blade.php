@@ -62,7 +62,13 @@
 
                             <div class="form-group">
                                 <label for="title">Nomor Whatsapp</label>
-                                <input type="number" id="whatsapp" name="whatsapp" class="form-control" placeholder="Nomor Whatsapp" value="{{ $informasi->whatsapp }}">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">+62</span>
+                                    </div>
+                                    <input type="number" id="whatsapp" name="whatsapp" class="form-control" placeholder="Nomor Whatsapp" value="{{ $informasi->whatsapp }}">
+                                </div>
+
                             </div>
 
                             <div class="form-group">

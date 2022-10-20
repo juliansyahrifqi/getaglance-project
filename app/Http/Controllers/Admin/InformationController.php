@@ -85,6 +85,8 @@ class InformationController extends Controller
 
         $data = $request->all();
 
+        $data['whatsapp'] = '62' . $request->whatsapp;
+
         if($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('assets/information', 'public');
             File::delete($information->image);

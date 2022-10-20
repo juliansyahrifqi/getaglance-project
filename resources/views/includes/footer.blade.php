@@ -33,13 +33,13 @@
 
             <div class="col-md-6 col-lg-3 mt-3">
                 <h4 class="footer-title">Hubungi Kami</h4>
-                <a href="https://wa.me/6282127788165?text=Halo" target="_blank" rel="noreferrer" class="text-white">
+                <a href="https://wa.me/{{ $information->whatsapp }}?text=Halo" target="_blank" rel="noreferrer" class="text-white">
 
                     <div class="d-flex align-items-center mt-4">
                         <div class="square">
                             <img class="whatsapp-icon" src="./assets/icon/whatsapp.svg" alt="">
                         </div>
-                        <p class="mb-0 ml-2 text-footer">(+62) 8123456789</p>
+                        <p class="mb-0 ml-2 text-footer">+{{ $information->whatsapp }}</p>
                     </div>
                 </a>
 
