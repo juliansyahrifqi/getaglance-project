@@ -56,6 +56,12 @@
                                 <label for="account_name">Nama Akun</label>
                                 <input type="text" id="account_name" name="account_name" class="form-control" placeholder="Nama Akun" value="{{ $social->account_name }}">
                             </div>
+
+                            <div class="form-group">
+                                <label>Link Akun</label>
+ 
+                                <input type="text" id="link" name="link" class="form-control" placeholder="Link Akun (Ex: instagram.com/getaglance" value="{{ $social->link }}">                
+                            </div>
     
                             <label for="icon">Icon Sosial Media</label>
                             <div class="input-group">

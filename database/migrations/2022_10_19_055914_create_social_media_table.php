@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('account_name');
+            $table->string('link');
             $table->string('icon');
             $table->timestamps();
         });

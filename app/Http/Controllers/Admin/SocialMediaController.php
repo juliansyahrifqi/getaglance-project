@@ -41,7 +41,7 @@ class SocialMediaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|unique:social_media',
             'account_name' => 'required|max:255',
             'icon' => 'mimes:jpeg,jpg,png,gif,svg|max:512'
         ]);
@@ -93,6 +93,7 @@ class SocialMediaController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'account_name' => 'required|max:255',
+            'link' => 'required|max:255',
             'icon' => 'mimes:jpeg,jpg,png,gif,svg|max:512'
         ]);
 

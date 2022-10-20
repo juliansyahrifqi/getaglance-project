@@ -49,6 +49,7 @@
                                         <th>Icon</th>
                                         <th>Nama</th>
                                         <th>Nama Akun</th>
+                                        <th>Link</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -68,6 +69,17 @@
                                                 </td>
                                                 <td>{{ $social->name }}</td>
                                                 <td>{{ $social->account_name }}</td>
+                                                <td>
+                                                    @if(str_contains($social->link, 'https://'))
+                                                        <a href="{{ $social->link }}" target="_blank">
+                                                            {{ $social->link }}
+                                                        </a>
+                                                    @else 
+                                                        <a href="https://{{ $social->link }}" target="_blank">
+                                                            https://{{ $social->link }}
+                                                        </a>
+                                                    @endif
+                                                </td>
                                                 <td>
                                                     <a class="btn btn-info btn-sm" href="{{ route('social-media.edit', $social->id) }}">
                                                         <i class="fas fa-edit"></i>

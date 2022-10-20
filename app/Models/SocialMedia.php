@@ -11,6 +11,6 @@ class SocialMedia extends Model
 
     protected $table = 'social_media';
     protected $fillable = [
-        'name', 'account_name', 'icon'
+        'name', 'account_name', 'link', 'icon'
     ];
 }

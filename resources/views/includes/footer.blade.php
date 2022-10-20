@@ -58,8 +58,12 @@
                     @if(!$socials->isEmpty())
  
                         @foreach($socials as $social)
-
-                            <a href="https://www.instagram.com" target="_blank" rel="noreferrer" class="text-white">
+                            @if(str_contains($social->link, 'https://'))
+                                @php $link = $social->link; @endphp
+                            @else 
+                                @php $link = 'https://' . $social->link; @endphp
+                            @endif
+                            <a href="{{ $link }}" target="_blank" rel="noreferrer" class="text-white">
                                 <div class="d-flex align-items-center mt-3">
                                     <div class="square">
                                     <img class="social-icon" src="{{ Storage::url($social->icon) }}" alt="{{ $social->name}}-icon">
