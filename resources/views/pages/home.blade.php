@@ -100,42 +100,35 @@
         <!-- End of Section Quote -->
 
         <!-- Section Article -->
-        <section class="article py-5">
-          <div class="container article-wrapper">
-            <h1 class="h2 article-title text-center">Artikel</h1>
+        <section class="produk-rekomendasi py-5">
+          <div class="container produk-rekomendasi-wrapper">
+            <h1 class="h2 article-title text-center">Rekomendasi Produk</h1>
+
             <div class="row">
-              <div class="col-md-6 col-lg-4 mt-4">
-                <div class="card card-article h-100 border-0 text-center">
-                  <img class="card-img-top" src="/assets/article-1.jpg" alt="Card image cap">
-                  <div class="card-body px-0">
-                    <h3 class="card-title card-article-title text-uppercase">Title</h5>
-                    <p class="card-text card-article-description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-article py-2">Go somewhere</a>
+              @if($products->isEmpty())
+                <div class="col-12">
+                  <div class="alert alert-info">
+                    Produk Tidak Ditemukan
                   </div>
                 </div>
-              </div>
+              @else
+                @foreach($products as $product)
+                  <div class="col-md-6 col-lg-4 mt-4">
+                    <div class="card card-article h-100 border-0 text-center">
+                      <img class="card-img-top" src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}">
 
-              <div class="col-md-6 col-lg-4 mt-4">
-                <div class="card card-article h-100 border-0 text-center">
-                  <img class="card-img-top" src="/assets/article-2.jpg" alt="Card image cap">
-                  <div class="card-body px-0">
-                    <h3 class="card-title card-article-title text-uppercase">Title</h5>
-                    <p class="card-text card-article-description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-article py-2">Go somewhere</a>
+                      <div class="card-body px-0">
+                        <h3 class="card-title card-article-title">{{ $product->name }}</h5>
+                        <p class="card-text card-product-price text-center mt-2 mb-1">
+                          {{ $product->kategori->nama_kategori }}
+                        </p>
+                
+                        <a href="{{ $product->link }}" class="btn btn-article py-2 mt-3">Belanja Sekarang</a>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4 mt-4">
-                <div class="card card-article h-100 border-0 text-center">
-                  <img class="card-img-top" src="/assets/article-3.jpg" alt="Card image cap">
-                  <div class="card-body px-0">
-                    <h3 class="card-title card-article-title text-uppercase">Title</h5>
-                    <p class="card-text card-article-description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-article py-2">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
+                @endforeach
+              @endif
             </div>
           </div>
         </section>
