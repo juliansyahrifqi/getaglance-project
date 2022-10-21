@@ -50,6 +50,7 @@
                                         <th>Nama Produk</th>
                                         <th>Kategori</th>
                                         <th>Link Produk</th>
+                                        <th>Rekomendasi</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -73,6 +74,13 @@
                                                   <a href="{{ $product->link }}" target="_blank">
                                                     {{ $product->link }}
                                                   </a>
+                                                </td>
+                                                <td>
+                                                    @if($product->rekomendasi == 1)
+                                                        <span class="badge badge-success px-2 py-1">Ya</span>   
+                                                    @else 
+                                                        <span class="badge badge-danger px-2 py-1">Tidak</span>
+                                                    @endif
                                                 </td>
                                                 <td>
                                                     <a class="btn btn-info btn-sm" href="{{ route('produk.edit', $product->id) }}">

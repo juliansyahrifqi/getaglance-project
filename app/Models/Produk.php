@@ -12,7 +12,7 @@ class Produk extends Model
 
     protected $table = 'produk';
     protected $fillable = [
-        'name', 'image', 'link', 'kategori_id'
+        'name', 'image', 'link', 'kategori_id', 'rekomendasi'
     ];
     public function kategori() {
         return $this->belongsTo(Kategori::class, 'kategori_id', 'id');

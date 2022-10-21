@@ -65,6 +65,23 @@
                                 <label for="link">Link Produk</label>
                                 <input type="text" id="link" name="link" class="form-control" placeholder="Link Produk (Ex: https://www.shopee.co.id)">
                             </div>
+
+                            <label for="link">Rekomendasi</label>
+                            <div class="form-group clearfix">
+                                <div class="icheck-success">
+                                    <input type="radio" id="rekomendasi1" name="rekomendasi"  value="1" checked>
+                                    <label for="rekomendasi1">
+                                        Ya
+                                    </label>
+                                </div>
+
+                                <div class="icheck-danger">
+                                    <input type="radio" id="rekomendasi2" name="rekomendasi" value="0">
+                                    <label for="rekomendasi2">
+                                        Tidak
+                                    </label>
+                                </div>
+                            </div>
     
                             <label for="kategori-image">Gambar Kategori</label>
                             <div class="input-group">
@@ -73,6 +90,7 @@
                                     <label class="custom-file-label" for="image">Choose file</label>
                                 </div>
                             </div>
+                            
     
                             <img id="perview" src="" class="mt-3"> 
                         </div>

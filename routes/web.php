@@ -38,7 +38,7 @@ Route::get('/produk', function () {
     ]);
 });
 
-Route::get('/produk/{slug}', function($slug) {
+Route::get('/produk/{id}', function($slug) {
     $category = Kategori::where('slug', $slug)->firstOrFail();
     $products = Produk::with('kategori')->where('kategori_id', $category->id)->simplePaginate(12);
 
@@ -46,11 +46,11 @@ Route::get('/produk/{slug}', function($slug) {
         'categories' => Kategori::all(),
         'products' => $products,
     ]);
-});
-
-Route::get('/artikel', function () {
-    return view('pages.artikel');
 })->name('produk-kategori');
+
+// Route::get('/artikel', function () {
+//     return view('pages.artikel');
+// });
 
 Route::get('/talent', function () {
     return view('pages.talent', [
