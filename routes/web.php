@@ -8,6 +8,7 @@ use App\Models\Kontak;
 use App\Models\Produk;
 use App\Models\Quote;
 use App\Models\Slider;
+use App\Models\SocialMedia;
 use App\Models\Talent;
 use App\Models\TalentSection;
 use App\Models\Tentang;
@@ -70,6 +71,8 @@ Route::get('/tentang', function () {
 Route::get('/kontak', function () {
     return view('pages.kontak', [
         'kontak' => Kontak::findOrFail(1),
+        'socials' => SocialMedia::all(),
+        'informasi' => Information::first()
     ]);
 });
 
