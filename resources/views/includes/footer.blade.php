@@ -37,7 +37,7 @@
 
                     <div class="d-flex align-items-center mt-4">
                         <div class="square">
-                            <img class="whatsapp-icon" src="./assets/icon/whatsapp.svg" alt="">
+                            <img class="whatsapp-icon" src="/assets/icon/whatsapp.svg" alt="">
                         </div>
                         <p class="mb-0 ml-2 text-footer">+{{ $information->whatsapp }}</p>
                     </div>
@@ -45,7 +45,7 @@
 
                 <div class="d-flex align-items-center mt-2">
                     <div class="square">
-                        <img class="email-icon" src="./assets/icon/email.svg" alt="Email Icon">
+                        <img class="email-icon" src="/assets/icon/email.svg" alt="Email Icon">
                     </div>
                     <p class="mb-0 ml-2 text-footer">{{ $information->email }}</p>
                 </div>

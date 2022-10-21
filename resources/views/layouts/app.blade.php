@@ -20,14 +20,12 @@
         <!-- Swiper JS-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
-        
-
         <title>@yield('title')</title>
 
         {{-- Style --}}
         @stack('prepend-style')
         <!-- Custom Style -->
-        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="/style/style.css">
         @stack('addon-style')
     </head>
 

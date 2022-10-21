@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<main class="produk-page py-5">
+    <main class="produk-page py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 mt-3">
@@ -16,7 +16,7 @@
                     
                         <div class="card-body">
                             @foreach($categories as $category)
-                                <p class="card-filter-kategori-list"><a role="button">{{ $category->nama_kategori }}</a></p>
+                                <p class="card-filter-kategori-list"><a role="button" href="{{ route('produk-kategori', $category->slug) }}" class="card-filter-kategori-list text-decoration-none">{{ $category->nama_kategori }}</a></p>
                             @endforeach
                         </div>
 
@@ -52,6 +52,10 @@
                                 </div>
                             @endforeach
                         @endif
+                    </div>
+
+                    <div class="text-center mt-4">
+                        {{ $products->links() }}
                     </div>
                 </div>
             </div>

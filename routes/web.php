@@ -34,28 +34,43 @@ Route::get('/', function () {
 Route::get('/produk', function () {
     return view('pages.produk', [
         'categories' => Kategori::all(),
-        'products' => Produk::with('kategori')->get()
+        'products' => Produk::with('kategori')->simplePaginate(12)
     ]);
 });
-// Route::get('/artikel', function () {
-//     return view('pages.artikel');
-// });
+
+Route::get('/produk/{slug}', function($slug) {
+    $category = Kategori::where('slug', $slug)->firstOrFail();
+    $products = Produk::with('kategori')->where('kategori_id', $category->id)->simplePaginate(12);
+
+    return view('pages.produk', [
+        'categories' => Kategori::all(),
+        'products' => $products,
+    ]);
+});
+
+Route::get('/artikel', function () {
+    return view('pages.artikel');
+})->name('produk-kategori');
+
 Route::get('/talent', function () {
     return view('pages.talent', [
         'talents' => Talent::all(),
         'whatsapp' => Information::first()->whatsapp,
     ]);
 });
+
 Route::get('/tentang', function () {
     return view('pages.tentang', [
         'tentang' => Tentang::findOrFail(1),
     ]);
 });
+
 Route::get('/kontak', function () {
     return view('pages.kontak', [
         'kontak' => Kontak::findOrFail(1),
     ]);
 });
+
 Route::get('/afiliasi', function () {
     return view('pages.afiliasi', [
         'afiliasi' => Afiliasi::findOrFail(1)
