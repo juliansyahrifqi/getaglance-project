@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Models\Afiliasi;
 use App\Models\Information;
 use App\Models\Kategori;
@@ -102,6 +103,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function() {
     Route::resource('informasi', 'App\Http\Controllers\Admin\InformationController');
     Route::resource('social-media', 'App\Http\Controllers\Admin\SocialMediaController');
     Route::resource('produk', 'App\Http\Controllers\Admin\ProdukController');
+    Route::resource('pengguna', 'App\Http\Controllers\Admin\PenggunaController')->except(['edit', 'update', 'show', 'destroy']);
 });
 
 require __DIR__.'/auth.php';

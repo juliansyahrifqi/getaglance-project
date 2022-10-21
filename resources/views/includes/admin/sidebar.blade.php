@@ -124,6 +124,16 @@
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-header">Pengguna</li>
+                <li class="nav-item">
+                    <a href="{{ route('pengguna.index') }}" class="nav-link {{ (request()->is('admin/pengguna*')) ? 'active' : ''}}">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>
+                            List Admin
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
       <!-- /.sidebar-menu -->
