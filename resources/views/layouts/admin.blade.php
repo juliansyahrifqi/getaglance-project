@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="/vendor/plugins/fontawesome-free/css/all.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet" href="/vendor/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="/vendor/plugins/select2/css/select2.min.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="/vendor/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- JQVMap -->

@@ -4,6 +4,7 @@ use App\Models\Afiliasi;
 use App\Models\Information;
 use App\Models\Kategori;
 use App\Models\Kontak;
+use App\Models\Produk;
 use App\Models\Quote;
 use App\Models\Slider;
 use App\Models\Talent;
@@ -33,6 +34,7 @@ Route::get('/', function () {
 Route::get('/produk', function () {
     return view('pages.produk', [
         'categories' => Kategori::all(),
+        'products' => Produk::with('kategori')->get()
     ]);
 });
 // Route::get('/artikel', function () {
@@ -83,6 +85,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function() {
     Route::resource('afiliasi', 'App\Http\Controllers\Admin\AfiliasiController');
     Route::resource('informasi', 'App\Http\Controllers\Admin\InformationController');
     Route::resource('social-media', 'App\Http\Controllers\Admin\SocialMediaController');
+    Route::resource('produk', 'App\Http\Controllers\Admin\ProdukController');
 });
 
 require __DIR__.'/auth.php';

@@ -115,6 +115,15 @@
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('produk.index') }}" class="nav-link {{ (request()->is('admin/produk*')) ? 'active' : ''}}">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>
+                            List Produk
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
       <!-- /.sidebar-menu -->
