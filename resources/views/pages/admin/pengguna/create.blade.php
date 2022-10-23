@@ -38,34 +38,34 @@
                         @csrf
 
                         <div class="card-body">
-                          @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                          @endif
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
 
                             <div class="form-group">
                                 <label for="name">Nama Admin</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Admin">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Admin" value="{{ old('name') }}" required>
                             </div>
                             
                             <div class="form-group">
                                 <label for="link">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="Email Admin">
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Email Admin" value="{{ old('email') }}" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="link">Password</label>
-                                <input type="password" id="password" name="password" class="form-control" placeholder="Password">
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="link">Konfirmasi Password</label>
-                                <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Konfirmasi Password">
+                                <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Konfirmasi Password" required>
                             </div>
                         </div>
 
