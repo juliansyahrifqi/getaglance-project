@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Slider
+    Get A Glance Admin | Quote Section
 @endsection
 
 @section('content')
@@ -42,14 +42,14 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Judul</label>
-                                <textarea name="title" class="form-control" placeholder="Masukkkan Judul Quote" rows="4">{{ $quote->title }}</textarea>
+                                <textarea name="title" class="form-control" placeholder="Masukkkan Judul Quote" rows="4" required>{{ $quote->title }}</textarea>
                             </div>
                         </div>
     
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Deskripsi</label>
-                                <textarea name="description" class="form-control" placeholder="Masukkan Deskripsi Quote" rows="4">{{ $quote->description }}</textarea>
+                                <textarea name="description" class="form-control" placeholder="Masukkan Deskripsi Quote" rows="4" required>{{ $quote->description }}</textarea>
                             </div>
                         </div>
                     </div>

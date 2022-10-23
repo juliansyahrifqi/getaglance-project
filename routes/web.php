@@ -97,7 +97,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function() {
     })->name('dashboard-admin');
     Route::resource('slider', 'App\Http\Controllers\Admin\SliderController');
     Route::resource('kategori', 'App\Http\Controllers\Admin\KategoriController');
-    Route::resource('quote', 'App\Http\Controllers\Admin\QuoteController');
+    Route::resource('quote', 'App\Http\Controllers\Admin\QuoteController')->except(['create', 'store', 'show', 'edit', 'destroy']);
     Route::resource('talent-section', 'App\Http\Controllers\Admin\TalentSectionController')->except(['create', 'store', 'show', 'edit', 'destroy']);
     Route::resource('tentang', 'App\Http\Controllers\Admin\TentangController');
     Route::resource('kontak', 'App\Http\Controllers\Admin\KontakController');
