@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Slider
+    Get A Glance Admin | Sosial Media
 @endsection
 
 @section('content')

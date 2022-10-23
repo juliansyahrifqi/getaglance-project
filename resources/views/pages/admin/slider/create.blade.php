@@ -32,28 +32,28 @@
                         <h3 class="card-title">Form Tambah Slider</h3>
                     </div>
 
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-
                     <form action="{{ route('slider.store') }}" enctype="multipart/form-data" method="POST">
                         @csrf
 
                         <div class="card-body">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                             <div class="form-group">
                                 <label for="title">Judul Slider</label>
-                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul">
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul" value="{{ old('title') }}" required>
                             </div>
     
                             <div class="form-group">
                                 <label for="description">Deskripsi Slider</label>
-                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi"></textarea>
+                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi" required>{{ old('description') }}</textarea>
                             </div>
     
                             <label for="slider-image">Gambar Slider</label>

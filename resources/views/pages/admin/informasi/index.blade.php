@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Talent Section
+    Get A Glance Admin | Informasi Usaha
 @endsection
 
 @section('content')

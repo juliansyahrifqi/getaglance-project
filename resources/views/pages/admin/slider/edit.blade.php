@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Tambah Slider
+    Get A Glance Admin | Edit Slider
 @endsection
 
 @section('content')
@@ -16,7 +16,7 @@
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
                         <li class="breadcrumb-item"><a href="{{ route('slider.index') }}">Slider</a></li>
-                        <li class="breadcrumb-item active">Ubah Slider</li>
+                        <li class="breadcrumb-item active">Edit Slider</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -29,7 +29,7 @@
             <div class="col-8 mx-auto">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Form Ubah Slider</h3>
+                        <h3 class="card-title">Form Edit Slider</h3>
                     </div>
 
                     <form action="{{ route('slider.update', $slider->id) }}" enctype="multipart/form-data" method="POST">
@@ -49,12 +49,12 @@
                             
                             <div class="form-group">
                                 <label for="title">Judul Slider</label>
-                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul" value="{{ $slider->title }}">
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul" value="{{ $slider->title }}" required>
                             </div>
     
                             <div class="form-group">
                                 <label for="description">Deskripsi Slider</label>
-                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi">{{ $slider->description }}</textarea>
+                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi" required>{{ $slider->description }}</textarea>
                             </div>
     
                             <label for="slider-image">Gambar Slider</label>
