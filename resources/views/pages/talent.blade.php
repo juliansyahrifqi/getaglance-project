@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Get A Glance | Artikel
+    Get A Glance | Talent
 @endsection
 
 @section('content')

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Tambah Kategori
+    Get A Glance Admin | Tambah Talent
 @endsection
 
 @section('content')
@@ -48,17 +48,17 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="title">Nama Talent</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Talent">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Talent" value="{{ old('name') }}" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="title">Instagram Talent</label>
-                                <input type="text" id="instagram" name="instagram" class="form-control" placeholder="Nama Instagram Talent">
+                                <input type="text" id="instagram" name="instagram" class="form-control" placeholder="Nama Instagram Talent" value="{{ old('instagram') }}" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="title">Pekerjaan Talent</label>
-                                <input type="text" id="pekerjaan" name="pekerjaan" class="form-control" placeholder="Pekerjaan Talent">
+                                <input type="text" id="pekerjaan" name="pekerjaan" class="form-control" placeholder="Pekerjaan Talent" value="{{ old('pekerjaan') }}" required>
                             </div>
     
                             <label for="kategori-image">Foto Talent</label>

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Tambah Kategori
+    Get A Glance Admin | Edit Talent
 @endsection
 
 @section('content')
@@ -32,34 +32,34 @@
                         <h3 class="card-title">Form Edit Talent</h3>
                     </div>
 
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-
                     <form action="{{ route('talent.update', $talent->id) }}" enctype="multipart/form-data" method="POST">
                         @method('PUT')
                         @csrf
 
                         <div class="card-body">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                             <div class="form-group">
                                 <label for="title">Nama Talent</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Talent" value="{{ $talent->name }}">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Talent" value="{{ $talent->name }}" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="title">Instagram Talent</label>
-                                <input type="text" id="instagram" name="instagram" class="form-control" placeholder="Nama Instagram Talent" value="{{ $talent->instagram }}">
+                                <input type="text" id="instagram" name="instagram" class="form-control" placeholder="Nama Instagram Talent" value="{{ $talent->instagram }}" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="title">Pekerjaan Talent</label>
-                                <input type="text" id="pekerjaan" name="pekerjaan" class="form-control" placeholder="Pekerjaan Talent" value="{{ $talent->pekerjaan }}">
+                                <input type="text" id="pekerjaan" name="pekerjaan" class="form-control" placeholder="Pekerjaan Talent" value="{{ $talent->pekerjaan }}" required>
                             </div>
     
                             <label for="kategori-image">Foto Talent</label>
@@ -104,7 +104,6 @@
 
         $('#image').change(function() {
             readUrl(this);
-            console.log('true');
         })
     </script>
 @endpush

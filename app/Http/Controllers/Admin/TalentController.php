@@ -44,7 +44,7 @@ class TalentController extends Controller
             'name' => 'required|max:255',
             'instagram' => 'required|max:255',
             'pekerjaan' => 'required|max:255',
-            'image' => 'mimes:jpeg,jpg,png,gif|max:512'
+            'image' => 'required|mimes:jpeg,jpg,png,gif|max:512'
         ]);
 
         $data = $request->all();

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Talent Section
+    Get A Glance Admin | List Talent
 @endsection
 
 @section('content')
@@ -43,7 +43,6 @@
                             
                             <div class="col-md-4">
                                 <div class="card card-widget widget-user shadow">
-                                    <!-- Add the bg color to the header using any of the bg-* classes -->
                                     <div class="widget-user-header bg-info">
                                         <h3 class="widget-user-username">{{ $talent->name }}</h3>
                                         <h5 class="widget-user-desc">{{ $talent->pekerjaan }}</h5>
@@ -92,13 +91,10 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                        <!-- /.modal-content -->
                                         </div>
-                                        <!-- /.modal-dialog -->
                                     </div>
                                 </div>
                             </div>
-                            
                         @endforeach
                     </div>
                 @endif
