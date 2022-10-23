@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Talent Section
+    Get A Glance Admin | Halaman Tentang
 @endsection
 
 @section('content')
@@ -51,12 +51,12 @@
                         
                             <div class="form-group">
                                 <label for="title">Judul</label>
-                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul" value="{{ $tentang->title }}">
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul" value="{{ $tentang->title }}" required>
                             </div>
     
                             <div class="form-group">
                                 <label for="description">Isi Halaman</label>
-                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi">{{ $tentang->description }}</textarea>
+                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi" required>{{ $tentang->description }}</textarea>
                             </div>
                         </div>
 
@@ -64,9 +64,7 @@
                             <button type="submit" class="btn btn-primary btn-block">Ubah</button>
                         </div>
                     </form>
-                    <!-- /.card-body -->
                 </div>
-                 <!-- /.card -->
             </div>
         </div>
     </section>

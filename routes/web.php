@@ -99,10 +99,10 @@ Route::prefix('admin')->middleware(['auth'])->group(function() {
     Route::resource('kategori', 'App\Http\Controllers\Admin\KategoriController');
     Route::resource('quote', 'App\Http\Controllers\Admin\QuoteController')->except(['create', 'store', 'show', 'edit', 'destroy']);
     Route::resource('talent-section', 'App\Http\Controllers\Admin\TalentSectionController')->except(['create', 'store', 'show', 'edit', 'destroy']);
-    Route::resource('tentang', 'App\Http\Controllers\Admin\TentangController');
+    Route::resource('tentang', 'App\Http\Controllers\Admin\TentangController')->except(['create', 'store', 'show', 'edit', 'destroy']);
     Route::resource('kontak', 'App\Http\Controllers\Admin\KontakController');
     Route::resource('talent', 'App\Http\Controllers\Admin\TalentController');
-    Route::resource('afiliasi', 'App\Http\Controllers\Admin\AfiliasiController');
+    Route::resource('afiliasi', 'App\Http\Controllers\Admin\AfiliasiController')->except(['create', 'store', 'show', 'edit', 'destroy']);
     Route::resource('informasi', 'App\Http\Controllers\Admin\InformationController');
     Route::resource('social-media', 'App\Http\Controllers\Admin\SocialMediaController');
     Route::resource('produk', 'App\Http\Controllers\Admin\ProdukController');

@@ -51,12 +51,12 @@
                         
                             <div class="form-group">
                                 <label for="title">Judul</label>
-                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul" value="{{ $afiliasi->title }}">
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul" value="{{ $afiliasi->title }}" required>
                             </div>
     
                             <div class="form-group">
                                 <label for="description">Isi Halaman</label>
-                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi">{{ $afiliasi->description }}</textarea>
+                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi" required>{{ $afiliasi->description }}</textarea>
                             </div>
                         </div>
 
