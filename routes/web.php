@@ -12,6 +12,7 @@ use App\Models\SocialMedia;
 use App\Models\Talent;
 use App\Models\TalentSection;
 use App\Models\Tentang;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -93,7 +94,12 @@ Route::get('/afiliasi', function () {
 
 Route::prefix('admin')->middleware(['auth'])->group(function() {
     Route::get('dashboard', function() {
-        return view('pages.admin.dashboard');
+        return view('pages.admin.dashboard', [
+            'total_product' => Produk::count(),
+            'total_talent' => Talent::count(),
+            'total_admin' => User::count(),
+            'total_kategori' => Kategori::count(),
+        ]);
     })->name('dashboard-admin');
     Route::resource('slider', 'App\Http\Controllers\Admin\SliderController');
     Route::resource('kategori', 'App\Http\Controllers\Admin\KategoriController');
