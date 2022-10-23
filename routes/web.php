@@ -98,7 +98,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function() {
     Route::resource('slider', 'App\Http\Controllers\Admin\SliderController');
     Route::resource('kategori', 'App\Http\Controllers\Admin\KategoriController');
     Route::resource('quote', 'App\Http\Controllers\Admin\QuoteController');
-    Route::resource('talent-section', 'App\Http\Controllers\Admin\TalentSectionController');
+    Route::resource('talent-section', 'App\Http\Controllers\Admin\TalentSectionController')->except(['create', 'store', 'show', 'edit', 'destroy']);
     Route::resource('tentang', 'App\Http\Controllers\Admin\TentangController');
     Route::resource('kontak', 'App\Http\Controllers\Admin\KontakController');
     Route::resource('talent', 'App\Http\Controllers\Admin\TalentController');

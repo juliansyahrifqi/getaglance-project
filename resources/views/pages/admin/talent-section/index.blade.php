@@ -52,17 +52,17 @@
 
                             <div class="form-group">
                                 <label for="title">Judul</label>
-                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul" value="{{ $talentSection->title }}">
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul" value="{{ $talentSection->title }}" required>
                             </div>
     
                             <div class="form-group">
                                 <label for="description">Subjudul</label>
-                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi">{{ $talentSection->subtitle }}</textarea>
+                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi" required>{{ $talentSection->subtitle }}</textarea>
                             </div>
 
                             <div class="form-group">
                                 <label for="description">Deskripsi</label>
-                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Subjudul">{{ $talentSection->description }}</textarea>
+                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Subjudul" required>{{ $talentSection->description }}</textarea>
                             </div>
     
                             <label for="slider-image">Gambar</label>
