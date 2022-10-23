@@ -52,12 +52,12 @@
 
                             <div class="form-group">
                                 <label for="title">Nama</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama" value="{{ $informasi->name }}">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama" value="{{ $informasi->name }}" required>
                             </div>
     
                             <div class="form-group">
                                 <label for="description">Deskripsi Singkat</label>
-                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi">{{ $informasi->description }}</textarea>
+                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi" required>{{ $informasi->description }}</textarea>
                             </div>
 
                             <div class="form-group">
@@ -66,14 +66,14 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">+62</span>
                                     </div>
-                                    <input type="number" id="whatsapp" name="whatsapp" class="form-control" placeholder="Nomor Whatsapp" value="{{ $informasi->whatsapp }}">
+                                    <input type="number" id="whatsapp" name="whatsapp" class="form-control" placeholder="Nomor Whatsapp" value="{{ $informasi->whatsapp }}" required>
                                 </div>
 
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="{{ $informasi->email }}">
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="{{ $informasi->email }}" required>
                             </div>
 
                             <label for="slider-image">Gambar</label>
