@@ -109,7 +109,7 @@
                 <li class="nav-header">PRODUK</li>
                 <li class="nav-item">
                     <a href="{{ route('kategori.index') }}" class="nav-link {{ (request()->is('admin/kategori*')) ? 'active' : ''}}">
-                        <i class="nav-icon fas fa-list"></i>
+                        <i class="nav-icon fa fa-divide"></i>
                         <p>
                             Kategori
                         </p>
@@ -118,7 +118,7 @@
 
                 <li class="nav-item">
                     <a href="{{ route('produk.index') }}" class="nav-link {{ (request()->is('admin/produk*')) ? 'active' : ''}}">
-                        <i class="nav-icon fas fa-list"></i>
+                        <i class="nav-icon fa fa-image"></i>
                         <p>
                             List Produk
                         </p>

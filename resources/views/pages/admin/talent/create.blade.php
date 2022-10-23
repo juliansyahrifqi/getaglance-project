@@ -76,9 +76,7 @@
                             <button type="submit" class="btn btn-primary btn-block">Tambah Talent</button>
                         </div>
                     </form>
-                    <!-- /.card-body -->
                 </div>
-                 <!-- /.card -->
             </div>
         </div>
     </section>

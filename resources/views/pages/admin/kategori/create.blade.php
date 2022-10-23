@@ -48,7 +48,7 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="title">Nama Kategori</label>
-                                <input type="text" id="nama_kategori" name="nama_kategori" class="form-control" placeholder="Nama Kategori">
+                                <input type="text" id="nama_kategori" name="nama_kategori" class="form-control" placeholder="Nama Kategori" value="{{ old('nama_kategori') }}" required>
                             </div>
     
                             <label for="kategori-image">Gambar Kategori</label>

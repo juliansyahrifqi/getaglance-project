@@ -42,8 +42,8 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_kategori' => 'max:255',
-            'image' => 'mimes:jpeg,jpg,png,gif|max:512'
+            'nama_kategori' => 'required|max:255',
+            'image' => 'required|mimes:jpeg,jpg,png,gif|max:512'
         ]);
 
         $data = $request->all();
