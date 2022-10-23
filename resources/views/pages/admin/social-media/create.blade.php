@@ -32,34 +32,34 @@
                         <h3 class="card-title">Form Tambah Sosial media</h3>
                     </div>
 
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-
                     <form action="{{ route('social-media.store') }}" enctype="multipart/form-data" method="POST">
                         @csrf
 
                         <div class="card-body">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                             @endif
+
                             <div class="form-group">
                                 <label for="name">Nama Sosial Media</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Sosial Media (Instagram, Twitter, dll)">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Sosial Media (Instagram, Twitter, dll)" value="{{ old('name') }}" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="account_name">Nama Akun</label>
-                                <input type="text" id="account_name" name="account_name" class="form-control" placeholder="Nama Akun">
+                                <input type="text" id="account_name" name="account_name" class="form-control" placeholder="Nama Akun" value="{{ old('account_name') }}" required>
                             </div>
                        
                             <div class="form-group">
                                 <label>Link Akun</label>
  
-                                <input type="text" id="link" name="link" class="form-control" placeholder="Link Akun (Ex: instagram.com/getaglance)">                
+                                <input type="text" id="link" name="link" class="form-control" placeholder="Link Akun (Ex: instagram.com/getaglance " value="{{ old('link') }}" required>                
                             </div>
     
                             <label for="icon">Icon Sosial Media</label>

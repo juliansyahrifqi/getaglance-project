@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Tambah Kategori
+    Get A Glance Admin | Edit Sosial Media
 @endsection
 
 @section('content')
@@ -29,38 +29,38 @@
             <div class="col-8 mx-auto">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Form Edit Sosial media</h3>
+                        <h3 class="card-title">Form Edit Sosial Media</h3>
                     </div>
-
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
 
                     <form action="{{ route('social-media.update', $social->id) }}" enctype="multipart/form-data" method="POST">
                         @method('PUT')
                         @csrf
 
                         <div class="card-body">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                             <div class="form-group">
                                 <label for="name">Nama Sosial Media</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Sosial Media (Instagram, Twitter, dll)" value="{{ $social->name }}">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Sosial Media (Instagram, Twitter, dll)" value="{{ $social->name }}" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="account_name">Nama Akun</label>
-                                <input type="text" id="account_name" name="account_name" class="form-control" placeholder="Nama Akun" value="{{ $social->account_name }}">
+                                <input type="text" id="account_name" name="account_name" class="form-control" placeholder="Nama Akun" value="{{ $social->account_name }}" required>
                             </div>
 
                             <div class="form-group">
                                 <label>Link Akun</label>
  
-                                <input type="text" id="link" name="link" class="form-control" placeholder="Link Akun (Ex: instagram.com/getaglance" value="{{ $social->link }}">                
+                                <input type="text" id="link" name="link" class="form-control" placeholder="Link Akun (Ex: instagram.com/getaglance" value="{{ $social->link }}" required>                
                             </div>
     
                             <label for="icon">Icon Sosial Media</label>

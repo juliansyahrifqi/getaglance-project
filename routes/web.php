@@ -31,7 +31,7 @@ Route::get('/', function () {
         'categories' => Kategori::all(),
         'quote' => Quote::find(1),
         'talentSection' => TalentSection::find(1),
-        'products' => Produk::all(),
+        'products' => Produk::limit(3)->get(),
     ]);
 });
 Route::get('/produk', function () {

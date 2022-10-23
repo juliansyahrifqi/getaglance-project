@@ -43,7 +43,7 @@ class SocialMediaController extends Controller
         $request->validate([
             'name' => 'required|max:255|unique:social_media',
             'account_name' => 'required|max:255',
-            'icon' => 'mimes:jpeg,jpg,png,gif,svg|max:512'
+            'icon' => 'required|mimes:jpeg,jpg,png,gif,svg|max:512'
         ]);
 
         $data = $request->all();
