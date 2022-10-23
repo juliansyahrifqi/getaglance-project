@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Slider
+    Get A Glance Admin | Produk
 @endsection
 
 @section('content')
@@ -99,13 +99,13 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div   div class="modal-header">
-                                                            <h4 class="modal-title">Hapus Kategori</h4>
+                                                            <h4 class="modal-title">Hapus Produk</h4>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <p>Kategori yang dipilih akan dihapus</p>
+                                                            <p>Produk yang dipilih akan dihapus</p>
                                                         </div>
                                                         <div class="modal-footer justify-content-between">
                                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

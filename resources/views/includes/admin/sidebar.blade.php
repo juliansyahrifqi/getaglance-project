@@ -128,7 +128,7 @@
                 <li class="nav-header">Pengguna</li>
                 <li class="nav-item">
                     <a href="{{ route('pengguna.index') }}" class="nav-link {{ (request()->is('admin/pengguna*')) ? 'active' : ''}}">
-                        <i class="nav-icon fas fa-list"></i>
+                        <i class="nav-icon fa fa-users"></i>
                         <p>
                             List Admin
                         </p>

@@ -32,29 +32,30 @@
                         <h3 class="card-title">Form Tambah Produk</h3>
                     </div>
 
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-
                     <form action="{{ route('produk.store') }}" enctype="multipart/form-data" method="POST">
                         @csrf
 
                         <div class="card-body">
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                             <div class="form-group">
                                 <label for="name">Nama Produk</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Produk">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Produk" value="{{ old('name') }}" required>
                             </div>
                             
 
                             <div class="form-group">
                               <label>Kategori Produk</label>
-                              <select class="form-control select2" style="width: 100%;" name="kategori_id">
+                              <select class="form-control select2" style="width: 100%;" name="kategori_id" required>
                                 @foreach($categories as $category) 
                                   <option value="{{ $category->id }}">{{ $category->nama_kategori }}</option>
                                 @endforeach
@@ -63,7 +64,7 @@
 
                             <div class="form-group">
                                 <label for="link">Link Produk</label>
-                                <input type="text" id="link" name="link" class="form-control" placeholder="Link Produk (Ex: https://www.shopee.co.id)">
+                                <input type="text" id="link" name="link" class="form-control" placeholder="Link Produk (Ex: https://www.shopee.co.id)" value="{{ old('link') }}" required>
                             </div>
 
                             <label for="link">Rekomendasi</label>

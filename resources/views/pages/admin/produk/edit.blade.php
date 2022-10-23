@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Tambah Produk
+    Get A Glance Admin | Edit Produk
 @endsection
 
 @section('content')
@@ -32,30 +32,30 @@
                         <h3 class="card-title">Form Edit Produk</h3>
                     </div>
 
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-
                     <form action="{{ route('produk.update', $product->id) }}" enctype="multipart/form-data" method="POST">
                         @method('PUT')
                         @csrf
 
                         <div class="card-body">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                             <div class="form-group">
                                 <label for="name">Nama Produk</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Produk" value="{{ $product->name }}">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Produk" value="{{ $product->name }}" required>
                             </div>
                             
 
                             <div class="form-group">
                               <label>Kategori Produk</label>
-                              <select class="form-control select2" style="width: 100%;" name="kategori_id">
+                              <select class="form-control select2" style="width: 100%;" name="kategori_id" required>
                                 @foreach($categories as $category) 
                                   <option value="{{ $category->id }}" {{ $product->kategori_id == $category->id ? 'selected' : ''}}>{{ $category->nama_kategori }}</option>
                                 @endforeach
@@ -64,7 +64,7 @@
 
                             <div class="form-group">
                                 <label for="link">Link Produk</label>
-                                <input type="text" id="link" name="link" class="form-control" placeholder="Link Produk (Ex: https://www.shopee.co.id)" value="{{ $product->link }}">
+                                <input type="text" id="link" name="link" class="form-control" placeholder="Link Produk (Ex: https://www.shopee.co.id)" value="{{ $product->link }}" required>
                             </div>
 
                             <label for="link">Rekomendasi</label>
