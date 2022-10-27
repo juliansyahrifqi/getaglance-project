@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Edit Slider
+    {{ config('app.name') }} Admin | Edit Slider
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Tambah Slider</h1>
+                    <h1 class="m-0">Edit Slider</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -48,16 +48,16 @@
                             @endif
                             
                             <div class="form-group">
-                                <label for="title">Judul Slider</label>
-                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul" value="{{ $slider->title }}" required>
+                                <label for="title">Slider Title</label>
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Slider Title" value="{{ $slider->title }}" required>
                             </div>
     
                             <div class="form-group">
-                                <label for="description">Deskripsi Slider</label>
-                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi" required>{{ $slider->description }}</textarea>
+                                <label for="description">Slider Description</label>
+                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Slider Description" required>{{ $slider->description }}</textarea>
                             </div>
     
-                            <label for="slider-image">Gambar Slider</label>
+                            <label for="slider-image">Slider Image</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="image" name="image">

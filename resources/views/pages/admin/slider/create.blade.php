@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Tambah Slider
+    {{ config('app.name') }} Admin | Add Slider
 @endsection
 
 @section('content')
@@ -10,13 +10,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Tambah Slider</h1>
+                    <h1 class="m-0">Add Slider</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
                         <li class="breadcrumb-item"><a href="{{ route('slider.index') }}">Slider</a></li>
-                        <li class="breadcrumb-item active">Tambah Slider</li>
+                        <li class="breadcrumb-item active">Add Slider</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -29,7 +29,7 @@
             <div class="col-8 mx-auto">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Form Tambah Slider</h3>
+                        <h3 class="card-title">Form Add Slider</h3>
                     </div>
 
                     <form action="{{ route('slider.store') }}" enctype="multipart/form-data" method="POST">
@@ -47,16 +47,16 @@
                             @endif
 
                             <div class="form-group">
-                                <label for="title">Judul Slider</label>
-                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul" value="{{ old('title') }}" required>
+                                <label for="title">Slider Title</label>
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Slider Title" value="{{ old('title') }}" required>
                             </div>
     
                             <div class="form-group">
-                                <label for="description">Deskripsi Slider</label>
-                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi" required>{{ old('description') }}</textarea>
+                                <label for="description">Slider Description</label>
+                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Slider Description" required>{{ old('description') }}</textarea>
                             </div>
     
-                            <label for="slider-image">Gambar Slider</label>
+                            <label for="slider-image">Slider Image</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="image" name="image">
@@ -68,7 +68,7 @@
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-block">Tambah Slider</button>
+                            <button type="submit" class="btn btn-primary btn-block">Add Slider</button>
                         </div>
                     </form>
                     <!-- /.card-body -->
@@ -98,7 +98,6 @@
 
         $('#image').change(function() {
             readUrl(this);
-            console.log('true');
         })
     </script>
 @endpush

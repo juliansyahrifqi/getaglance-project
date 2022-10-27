@@ -103,7 +103,7 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <p>Sosial Media yang dipilih akan dihapus</p>
+                                                            <p>The selected social media will be deleted. Press delete when you want to delete it</p>
                                                         </div>
                                                         <div class="modal-footer justify-content-between">
                                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -111,7 +111,7 @@
                                                                 @method('delete')
                                                                 @csrf                                                
                                                                 <button type="submit" class="btn btn-danger">
-                                                                    Hapus
+                                                                    Delete
                                                                 </button>
                                                             </form>
                                                         </div>

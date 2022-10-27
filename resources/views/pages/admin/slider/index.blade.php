@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Slider
+    {{ config('app.name') }} Admin | Slider
 @endsection
 
 @section('content')
@@ -32,7 +32,7 @@
                         <div class="card-header">
                             <a href="{{ route('slider.create') }}" class="btn btn-success">
                                 <i class="fas fa-plus"></i>
-                                Tambah Slider
+                                Add Slider
                             </a>
                         </div>
                         <div class="card-body">
@@ -46,16 +46,16 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Gambar</th>
-                                        <th>Judul</th>
-                                        <th>Deskripsi</th>
-                                        <th>Aksi</th>
+                                        <th>Image</th>
+                                        <th>Title</th>
+                                        <th>Description</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @if($sliders->isEmpty())
                                         <div class="alert alert-danger">
-                                            Data slider tidak ada
+                                            Slider Not Found
                                         </div>
                                     @else
                                         @php $i = 1; @endphp
@@ -77,7 +77,7 @@
                                                     @if($slider->id != 1) 
                                                         <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{$slider->id}}">
                                                             <i class="fas fa-trash"></i>
-                                                            Hapus
+                                                            Delete
                                                         </a>
                                                     @endif
                                                 </td>
@@ -87,13 +87,13 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div   div class="modal-header">
-                                                            <h4 class="modal-title">Hapus Slider</h4>
+                                                            <h4 class="modal-title">Delete Slider</h4>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <p>Slider yang dipilih akan dihapus</p>
+                                                            <p>The selected slider will be deleted. Press delete when you want to delete it</p>
                                                         </div>
                                                         <div class="modal-footer justify-content-between">
                                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -101,7 +101,7 @@
                                                                 @method('delete')
                                                                 @csrf                                                
                                                                 <button type="submit" class="btn btn-danger">
-                                                                    Hapus
+                                                                    Delete
                                                                 </button>
                                                             </form>
                                                         </div>
