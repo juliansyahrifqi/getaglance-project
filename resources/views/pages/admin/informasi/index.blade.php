@@ -87,7 +87,7 @@
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-block">Ubah</button>
+                            <button type="submit" class="btn btn-primary btn-block">Edit</button>
                         </div>
                     </form>
                     <!-- /.card-body -->

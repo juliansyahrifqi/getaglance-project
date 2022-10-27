@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Talent Section
+    {{ config('app.name') }} Admin | Talent Section
 @endsection
 
 @section('content')
@@ -10,12 +10,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Talent</h1>
+                    <h1 class="m-0">Talent Section</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Talent</li>
+                        <li class="breadcrumb-item active">Talent Section</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -51,32 +51,32 @@
                             <img id="perview" src="{{ Storage::url($talentSection->image) }}" style="width:50%" class="mt-3 d-block mx-auto img-thumbnail img-fluid">
 
                             <div class="form-group">
-                                <label for="title">Judul</label>
-                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul" value="{{ $talentSection->title }}" required>
+                                <label for="title">Title</label>
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Title" value="{{ $talentSection->title }}" required>
                             </div>
     
                             <div class="form-group">
-                                <label for="description">Subjudul</label>
-                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi" required>{{ $talentSection->subtitle }}</textarea>
+                                <label for="description">Subtitle</label>
+                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Subtitle" required>{{ $talentSection->subtitle }}</textarea>
                             </div>
 
                             <div class="form-group">
-                                <label for="description">Deskripsi</label>
-                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Subjudul" required>{{ $talentSection->description }}</textarea>
+                                <label for="description">Description</label>
+                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Description" required>{{ $talentSection->description }}</textarea>
                             </div>
     
-                            <label for="slider-image">Gambar</label>
+                            <label for="slider-image">Image</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="image" name="image">
                                     <label class="custom-file-label" for="image">Choose file</label>
                                 </div>
                             </div> 
-                            <span class="text-danger">*Kosongkan jika tidak mengganti gambar</span>
+                            <span class="text-danger">*Leave blank if not replace image</span>
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-block">Ubah</button>
+                            <button type="submit" class="btn btn-primary btn-block">Edit</button>
                         </div>
                     </form>
                     <!-- /.card-body -->
