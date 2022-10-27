@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Tambah Talent
+    {{ config('app.name') }} Admin | Add Talent
 @endsection
 
 @section('content')
@@ -10,13 +10,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Tambah Talent</h1>
+                    <h1 class="m-0">Add Talent</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
                         <li class="breadcrumb-item"><a href="{{ route('talent.index') }}">Talent</a></li>
-                        <li class="breadcrumb-item active">Tambah Talent</li>
+                        <li class="breadcrumb-item active">Add Talent</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -29,7 +29,7 @@
             <div class="col-8 mx-auto">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Form Tambah Talent</h3>
+                        <h3 class="card-title">Form Add Talent</h3>
                     </div>
 
                     @if ($errors->any())
@@ -47,21 +47,21 @@
 
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="title">Nama Talent</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Talent" value="{{ old('name') }}" required>
+                                <label for="title">Talent Name</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Talent Name" value="{{ old('name') }}" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="title">Instagram Talent</label>
-                                <input type="text" id="instagram" name="instagram" class="form-control" placeholder="Nama Instagram Talent" value="{{ old('instagram') }}" required>
+                                <input type="text" id="instagram" name="instagram" class="form-control" placeholder="Instagram Talent" value="{{ old('instagram') }}" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="title">Pekerjaan Talent</label>
-                                <input type="text" id="pekerjaan" name="pekerjaan" class="form-control" placeholder="Pekerjaan Talent" value="{{ old('pekerjaan') }}" required>
+                                <label for="title">Talent Profession</label>
+                                <input type="text" id="pekerjaan" name="pekerjaan" class="form-control" placeholder="Talent Profession" value="{{ old('pekerjaan') }}" required>
                             </div>
     
-                            <label for="kategori-image">Foto Talent</label>
+                            <label for="kategori-image">Talent Photo</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="image" name="image">
@@ -73,7 +73,7 @@
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-block">Tambah Talent</button>
+                            <button type="submit" class="btn btn-primary btn-block">Add Talent</button>
                         </div>
                     </form>
                 </div>

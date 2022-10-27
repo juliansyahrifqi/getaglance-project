@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Tambah Kategori
+    {{ config('app.name') }} Admin | Add Category
 @endsection
 
 @section('content')
@@ -10,13 +10,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Tambah Kategori</h1>
+                    <h1 class="m-0">Add Category</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('kategori.index') }}">Kategori</a></li>
-                        <li class="breadcrumb-item active">Tambah Kategori</li>
+                        <li class="breadcrumb-item"><a href="{{ route('kategori.index') }}">Category</a></li>
+                        <li class="breadcrumb-item active">Add Category</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -29,7 +29,7 @@
             <div class="col-8 mx-auto">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Form Tambah Kategori</h3>
+                        <h3 class="card-title">Form Add Category</h3>
                     </div>
 
                     @if ($errors->any())
@@ -47,11 +47,11 @@
 
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="title">Nama Kategori</label>
-                                <input type="text" id="nama_kategori" name="nama_kategori" class="form-control" placeholder="Nama Kategori" value="{{ old('nama_kategori') }}" required>
+                                <label for="title">Category Name</label>
+                                <input type="text" id="nama_kategori" name="nama_kategori" class="form-control" placeholder="Category Name" value="{{ old('nama_kategori') }}" required>
                             </div>
     
-                            <label for="kategori-image">Gambar Kategori</label>
+                            <label for="kategori-image">Category Image</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="image" name="image">
@@ -63,7 +63,7 @@
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-block">Tambah Kategori</button>
+                            <button type="submit" class="btn btn-primary btn-block">Add Category</button>
                         </div>
                     </form>
                     <!-- /.card-body -->
@@ -93,7 +93,6 @@
 
         $('#image').change(function() {
             readUrl(this);
-            console.log('true');
         })
     </script>
 @endpush

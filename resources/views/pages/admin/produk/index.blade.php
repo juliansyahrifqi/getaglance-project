@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Produk
+    {{ config('app.name') }} Admin | Product
 @endsection
 
 @section('content')
@@ -10,12 +10,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Produk</h1>
+                    <h1 class="m-0">Product</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Produk</li>
+                        <li class="breadcrumb-item active">Product</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -32,7 +32,7 @@
                         <div class="card-header">
                             <a href="{{ route('produk.create') }}" class="btn btn-success">
                                 <i class="fas fa-plus"></i>
-                                Tambah Produk
+                                Add Product
                             </a>
                         </div>
                         <div class="card-body">
@@ -46,18 +46,18 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Gambar</th>
-                                        <th>Nama Produk</th>
-                                        <th>Kategori</th>
-                                        <th>Link Produk</th>
-                                        <th>Rekomendasi</th>
-                                        <th>Aksi</th>
+                                        <th>Image</th>
+                                        <th>Product Name</th>
+                                        <th>Category</th>
+                                        <th>Product Link</th>
+                                        <th>Recomendation</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @if($products->isEmpty())
                                         <div class="alert alert-danger">
-                                            Data produk tidak ada
+                                            Product Not Found
                                         </div>
                                     @else
                                         @php $i = 1; @endphp
@@ -90,7 +90,7 @@
 
                                                     <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{$product->id}}">
                                                         <i class="fas fa-trash"></i>
-                                                        Hapus
+                                                        Delete
                                                     </a>
                                                 </td>
                                             </tr>
@@ -99,13 +99,13 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div   div class="modal-header">
-                                                            <h4 class="modal-title">Hapus Produk</h4>
+                                                            <h4 class="modal-title">Delete Product</h4>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <p>Produk yang dipilih akan dihapus</p>
+                                                            <p>The selected product will be deleted. Press delete when you want to delete it</p>
                                                         </div>
                                                         <div class="modal-footer justify-content-between">
                                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -113,7 +113,7 @@
                                                                 @method('delete')
                                                                 @csrf                                                
                                                                 <button type="submit" class="btn btn-danger">
-                                                                    Hapus
+                                                                    Delete
                                                                 </button>
                                                             </form>
                                                         </div>

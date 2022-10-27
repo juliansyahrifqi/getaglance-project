@@ -56,8 +56,6 @@ class PenggunaController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
-
         return redirect()->route('pengguna.index')->with('success', 'Admin Berhasil Ditambahkan');
     }
 

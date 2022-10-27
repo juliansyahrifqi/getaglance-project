@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Edit Talent
+    {{ config('app.name') }} Admin | Edit Talent
 @endsection
 
 @section('content')
@@ -48,21 +48,21 @@
                             @endif
 
                             <div class="form-group">
-                                <label for="title">Nama Talent</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Talent" value="{{ $talent->name }}" required>
+                                <label for="title">Talent Name</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Talent Name" value="{{ $talent->name }}" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="title">Instagram Talent</label>
-                                <input type="text" id="instagram" name="instagram" class="form-control" placeholder="Nama Instagram Talent" value="{{ $talent->instagram }}" required>
+                                <input type="text" id="instagram" name="instagram" class="form-control" placeholder="Instagram Talent" value="{{ $talent->instagram }}" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="title">Pekerjaan Talent</label>
-                                <input type="text" id="pekerjaan" name="pekerjaan" class="form-control" placeholder="Pekerjaan Talent" value="{{ $talent->pekerjaan }}" required>
+                                <label for="title">Talent Profession</label>
+                                <input type="text" id="pekerjaan" name="pekerjaan" class="form-control" placeholder="Talent Profession" value="{{ $talent->pekerjaan }}" required>
                             </div>
     
-                            <label for="kategori-image">Foto Talent</label>
+                            <label for="kategori-image">Talent Image</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="image" name="image">

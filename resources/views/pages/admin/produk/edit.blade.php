@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Edit Produk
+    {{ config('app.name') }} Admin | Edit Product
 @endsection
 
 @section('content')
@@ -10,13 +10,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Edit Produk</h1>
+                    <h1 class="m-0">Edit Product</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('produk.index') }}">Produk</a></li>
-                        <li class="breadcrumb-item active">Edit Produk</li>
+                        <li class="breadcrumb-item"><a href="{{ route('produk.index') }}">Product</a></li>
+                        <li class="breadcrumb-item active">Edit Product</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -29,7 +29,7 @@
             <div class="col-8 mx-auto">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Form Edit Produk</h3>
+                        <h3 class="card-title">Form Edit Product</h3>
                     </div>
 
                     <form action="{{ route('produk.update', $product->id) }}" enctype="multipart/form-data" method="POST">
@@ -48,13 +48,13 @@
                             @endif
 
                             <div class="form-group">
-                                <label for="name">Nama Produk</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Produk" value="{{ $product->name }}" required>
+                                <label for="name">Product Name</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Product Name" value="{{ $product->name }}" required>
                             </div>
                             
 
                             <div class="form-group">
-                              <label>Kategori Produk</label>
+                              <label>Product Category</label>
                               <select class="form-control select2" style="width: 100%;" name="kategori_id" required>
                                 @foreach($categories as $category) 
                                   <option value="{{ $category->id }}" {{ $product->kategori_id == $category->id ? 'selected' : ''}}>{{ $category->nama_kategori }}</option>
@@ -63,28 +63,28 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="link">Link Produk</label>
-                                <input type="text" id="link" name="link" class="form-control" placeholder="Link Produk (Ex: https://www.shopee.co.id)" value="{{ $product->link }}" required>
+                                <label for="link">Product Link</label>
+                                <input type="text" id="link" name="link" class="form-control" placeholder="Product Link (Ex: https://www.shopee.co.id)" value="{{ $product->link }}" required>
                             </div>
 
-                            <label for="link">Rekomendasi</label>
+                            <label for="link">Recomendation</label>
                             <div class="form-group clearfix">
                                 <div class="icheck-success">
                                     <input type="radio" id="rekomendasi1" name="rekomendasi"  value="1" {{ $product->rekomendasi == 1 ? 'checked' : ''}}>
                                     <label for="rekomendasi1">
-                                        Ya
+                                        Yes
                                     </label>
                                 </div>
 
                                 <div class="icheck-danger">
                                     <input type="radio" id="rekomendasi2" name="rekomendasi" value="0" {{ $product->rekomendasi == 0 ? 'checked' : ''}}>
                                     <label for="rekomendasi2">
-                                        Tidak
+                                        No
                                     </label>
                                 </div>
                             </div>
     
-                            <label for="kategori-image">Gambar Kategori</label>
+                            <label for="kategori-image">Product Image</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="image" name="image">
@@ -96,7 +96,7 @@
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-block">Edit Produk</button>
+                            <button type="submit" class="btn btn-primary btn-block">Edit Product</button>
                         </div>
                     </form>
                     <!-- /.card-body -->

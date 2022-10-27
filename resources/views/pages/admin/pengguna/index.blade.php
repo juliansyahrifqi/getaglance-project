@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Slider
+    {{ config('app.name') }} Admin | User
 @endsection
 
 @section('content')
@@ -10,12 +10,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">List Admin</h1>
+                    <h1 class="m-0">Admin List</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
-                        <li class="breadcrumb-item active">List Admin</li>
+                        <li class="breadcrumb-item active">Admin List</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -32,7 +32,7 @@
                         <div class="card-header">
                             <a href="{{ route('pengguna.create') }}" class="btn btn-success">
                                 <i class="fas fa-plus"></i>
-                                Tambah Admin
+                                Add Admin
                             </a>
                         </div>
                         <div class="card-body">
@@ -46,16 +46,16 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Nama</th>
+                                        <th>Name</th>
                                         <th>Email</th>
-                                        <th>Tanggal Ditambahkan</th>
+                                        <th>Date Created</th>
                                         <!-- <th>Aksi</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @if($users->isEmpty())
                                         <div class="alert alert-danger">
-                                            Data produk tidak ada
+                                            Admin Not Found
                                         </div>
                                     @else
                                         @php $i = 1; @endphp

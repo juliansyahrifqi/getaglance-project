@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Tambah Admin
+    {{ config('app.name') }} Admin | User
 @endsection
 
 @section('content')
@@ -10,13 +10,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Tambah Admin</h1>
+                    <h1 class="m-0">Add Admin</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
                         <li class="breadcrumb-item"><a href="{{ route('pengguna.index') }}">List Admin</a></li>
-                        <li class="breadcrumb-item active">Tambah Admin</li>
+                        <li class="breadcrumb-item active">Add Admin</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -29,10 +29,8 @@
             <div class="col-8 mx-auto">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Form Tambah Admin</h3>
+                        <h3 class="card-title">Form ADd Admin</h3>
                     </div>
-
-                    
 
                     <form action="{{ route('pengguna.store') }}" enctype="multipart/form-data" method="POST">
                         @csrf
@@ -49,13 +47,13 @@
                             @endif
 
                             <div class="form-group">
-                                <label for="name">Nama Admin</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Admin" value="{{ old('name') }}" required>
+                                <label for="name">Admin Name</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Admin Name" value="{{ old('name') }}" required>
                             </div>
                             
                             <div class="form-group">
                                 <label for="link">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="Email Admin" value="{{ old('email') }}" required>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Admin Email" value="{{ old('email') }}" required>
                             </div>
 
                             <div class="form-group">
@@ -64,13 +62,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="link">Konfirmasi Password</label>
-                                <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Konfirmasi Password" required>
+                                <label for="link">Password Confirmation</label>
+                                <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Password Confirmation" required>
                             </div>
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-block">Tambah Admin</button>
+                            <button type="submit" class="btn btn-primary btn-block">Add Admin</button>
                         </div>
                     </form>
                     <!-- /.card-body -->

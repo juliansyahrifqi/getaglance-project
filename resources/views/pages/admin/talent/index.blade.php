@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | List Talent
+    {{ config('app.name') }} Admin | Talent List
 @endsection
 
 @section('content')
@@ -28,19 +28,18 @@
             <div class="card-header">
                 <a href="{{ route('talent.create') }}" class="btn btn-success">
                     <i class="fas fa-plus"></i>
-                    Tambah Talent
+                    Add Talent
                 </a>
             </div>
         
             <div class="card-body">
                 @if($talents->isEmpty()) 
                     <div class="alert alert-danger">
-                        Talent Tidak Ditemukan
+                        Talent Not Found
                     </div>
                 @else
                     <div class="row">
                         @foreach($talents as $talent)
-                            
                             <div class="col-md-4">
                                 <div class="card card-widget widget-user shadow">
                                     <div class="widget-user-header bg-info">
@@ -64,7 +63,7 @@
     
                                         <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{$talent->id}}">
                                             <i class="fas fa-trash"></i>
-                                            Hapus
+                                            Delete
                                         </a>
                                     </div>
     
@@ -72,13 +71,13 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div   div class="modal-header">
-                                                    <h4 class="modal-title">Hapus Talent</h4>
+                                                    <h4 class="modal-title">Delete Talent</h4>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p>Talent yang dipilih akan dihapus</p>
+                                                    <p>The selected talent will be deleted. Press delete when you want to delete it</p>
                                                 </div>
                                                 <div class="modal-footer justify-content-between">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -86,7 +85,7 @@
                                                         @method('delete')
                                                         @csrf                                                
                                                         <button type="submit" class="btn btn-danger">
-                                                            Hapus
+                                                            Delete
                                                         </button>
                                                     </form>
                                                 </div>

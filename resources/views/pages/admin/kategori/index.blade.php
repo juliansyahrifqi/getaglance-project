@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Kategori
+    {{ config('app.name') }} Admin | Category
 @endsection
 
 @section('content')
@@ -10,12 +10,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Kategori</h1>
+                    <h1 class="m-0">Category</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Kategori</li>
+                        <li class="breadcrumb-item active">Category</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -32,7 +32,7 @@
                         <div class="card-header">
                             <a href="{{ route('kategori.create') }}" class="btn btn-success">
                                 <i class="fas fa-plus"></i>
-                                Tambah Kategori
+                                Add Category
                             </a>
                         </div>
                         <div class="card-body">
@@ -46,15 +46,15 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Gambar</th>
-                                        <th>Nama Kategori</th>
-                                        <th>Aksi</th>
+                                        <th>Image</th>
+                                        <th>Category Name</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @if($categories->isEmpty())
                                         <div class="alert alert-danger">
-                                            Data kategori tidak ada
+                                            Category Not Found
                                         </div>
                                     @else
                                         @php $i = 1; @endphp
@@ -74,7 +74,7 @@
 
                                                     <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{$category->id}}">
                                                         <i class="fas fa-trash"></i>
-                                                        Hapus
+                                                        Delete
                                                     </a>
                                                 </td>
                                             </tr>
@@ -83,13 +83,13 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div   div class="modal-header">
-                                                            <h4 class="modal-title">Hapus Kategori</h4>
+                                                            <h4 class="modal-title">Delete Category</h4>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <p>Kategori yang dipilih akan dihapus</p>
+                                                            <p>The selected category will be deleted. Press delete when you want to delete it</p>
                                                         </div>
                                                         <div class="modal-footer justify-content-between">
                                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -97,7 +97,7 @@
                                                                 @method('delete')
                                                                 @csrf                                                
                                                                 <button type="submit" class="btn btn-danger">
-                                                                    Hapus
+                                                                    Delete
                                                                 </button>
                                                             </form>
                                                         </div>
