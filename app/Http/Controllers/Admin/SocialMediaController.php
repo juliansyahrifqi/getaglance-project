@@ -94,13 +94,13 @@ class SocialMediaController extends Controller
             'name' => 'required|max:255',
             'account_name' => 'required|max:255',
             'link' => 'required|max:255',
-            'icon' => 'mimes:jpeg,jpg,png,gif,svg|max:512'
+            'icon' => 'required|mimes:jpeg,jpg,png,gif,svg|max:512'
         ]);
 
         $data = $request->all();
 
-        if($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('assets/kategori', 'public');
+        if($request->hasFile('icon')) {
+            $data['icon'] = $request->file('icon')->store('assets/sosial-media', 'public');
             File::delete($social->image);
         }
 
