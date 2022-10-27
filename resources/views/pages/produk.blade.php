@@ -22,7 +22,7 @@
 
                       </div>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-9 mt-3">
                     <div class="row">
                         @if($products->isEmpty())
                             <div class="col-12">

@@ -40,14 +40,14 @@
                 <div class="row category-list-wrapper">
                     @foreach($categories as $category)
                       <div class="col-12 col-md-4 mt-2">
-                          <a href="/produk" class="text-decoration-none">
+                          <a href="{{ route('produk-kategori', $category->slug) }}" class="text-decoration-none">
                               <div class="category-list d-flex flex-column justify-content-center align-items-center" style="background: url('{{ Storage::url($category->image) }}') no-repeat top center;
                               background-size: cover;
                               height: 50vh;
                               transition: all 0.3s;
                               cursor: pointer;">
                                   <h3 class="category-list-title text-white">{{ $category->nama_kategori }}</h3>
-                                  <button class="btn-category-list mt-2 px-4 py-2">Selengkapnya</button>
+                                  <button class="btn-category-list mt-2 px-4 py-2">See More</button>
                               </div>
                           </a>
                       </div>
@@ -108,7 +108,7 @@
               @if($products->isEmpty())
                 <div class="col-12">
                   <div class="alert alert-info">
-                    Produk Tidak Ditemukan
+                    Product Not Found
                   </div>
                 </div>
               @else
