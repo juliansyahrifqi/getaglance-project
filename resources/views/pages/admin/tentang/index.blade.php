@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Halaman Tentang
+    {{ config('app.name') }} Admin | About Page
 @endsection
 
 @section('content')
@@ -10,12 +10,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Halaman Tentang</h1>
+                    <h1 class="m-0">About Page</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Halaman Tentang</li>
+                        <li class="breadcrumb-item active">About Page</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -48,20 +48,19 @@
                                 </div>
                             @endif
                             
-                        
                             <div class="form-group">
-                                <label for="title">Judul</label>
-                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul" value="{{ $tentang->title }}" required>
+                                <label for="title">Title</label>
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Title" value="{{ $tentang->title }}" required>
                             </div>
     
                             <div class="form-group">
-                                <label for="description">Isi Halaman</label>
-                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi" required>{{ $tentang->description }}</textarea>
+                                <label for="description">Page Content</label>
+                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Page Content" required>{{ $tentang->description }}</textarea>
                             </div>
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-block">Ubah</button>
+                            <button type="submit" class="btn btn-primary btn-block">Edit</button>
                         </div>
                     </form>
                 </div>

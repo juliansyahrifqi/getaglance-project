@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Talent Section
+    {{ config('app.name') }} Admin | Contact Page
 @endsection
 
 @section('content')
@@ -10,12 +10,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Halaman Kontak</h1>
+                    <h1 class="m-0">Contact Page</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Halaman Kontak</li>
+                        <li class="breadcrumb-item active">Contact Page</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -50,18 +50,18 @@
                             
                         
                             <div class="form-group">
-                                <label for="title">Judul</label>
-                                <input type="text" id="title" name="title" class="form-control" placeholder="Nama Judul" value="{{ $kontak->title }}" required>
+                                <label for="title">Title</label>
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Title" value="{{ $kontak->title }}" required>
                             </div>
     
                             <div class="form-group">
-                                <label for="description">Isi Halaman</label>
-                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi" required>{{ $kontak->description }}</textarea>
+                                <label for="description">Page Content</label>
+                                <textarea id="description" class="form-control" rows="4" name="description" placeholder="Page Content" required>{{ $kontak->description }}</textarea>
                             </div>
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-block">Ubah</button>
+                            <button type="submit" class="btn btn-primary btn-block">Edit</button>
                         </div>
                     </form>
                     <!-- /.card-body -->
