@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('dashboard-admin') }}" class="brand-link text-center">
-        <span class="brand-text font-weight-light">Get A Glance</span>
+        <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
     </a>
 
     <!-- Sidebar -->
@@ -15,17 +15,17 @@
                     <a href="{{ route('dashboard-admin') }}" class="nav-link {{ (request()->is('admin/dashboard*')) ? 'active' : ''}}">
                         <i class="nav-icon fas fa-home"></i>
                         <p>
-                            Beranda
+                            Home
                         </p>
                     </a>
                 </li>
 
-                <li class="nav-header">INFORMASI</li>
+                <li class="nav-header">Information</li>
                 <li class="nav-item">
                     <a href="{{ route('informasi.index') }}" class="nav-link {{ (request()->is('admin/informasi*')) ? 'active' : ''}}">
                         <i class="nav-icon fa fa-info"></i>
                         <p>
-                            Informasi Usaha
+                            Information
                         </p>
                     </a>
                 </li>
@@ -34,12 +34,12 @@
                     <a href="{{ route('social-media.index') }}" class="nav-link {{ (request()->is('admin/social-media*')) ? 'active' : ''}}">
                         <i class="nav-icon fa fa-hashtag"></i>
                         <p>
-                            Sosial Media
+                            Social Media
                         </p>
                     </a>
                 </li>
           
-                <li class="nav-header">HALAMAN UTAMA</li>
+                <li class="nav-header">MAIN PAGE</li>
                 <li class="nav-item">
                     <a href="{{ route('slider.index') }}" class="nav-link {{ (request()->is('admin/slider*')) ? 'active' : ''}}">
                         <i class="nav-icon far fa-image"></i>
@@ -67,12 +67,12 @@
                     </a>
                 </li>
 
-                <li class="nav-header">HALAMAN LAIN</li>
+                <li class="nav-header">OTHER PAGE</li>
                 <li class="nav-item">
                     <a href="{{ route('tentang.index') }}" class="nav-link {{ (request()->is('admin/tentang*')) ? 'active' : ''}}">
                         <i class="nav-icon fa fa-info"></i>
                         <p>
-                            Halaman Tentang
+                            About Page
                         </p>
                     </a>
                 </li>
@@ -81,7 +81,7 @@
                     <a href="{{ route('kontak.index') }}" class="nav-link {{ (request()->is('admin/kontak*')) ? 'active' : ''}}">
                         <i class="nav-icon fa fa-address-card"></i>
                         <p>
-                            Halaman Kontak
+                            Contact Page
                         </p>
                     </a>
                 </li>
@@ -90,7 +90,7 @@
                     <a href="{{ route('afiliasi.index') }}" class="nav-link {{ (request()->is('admin/afiliasi*')) ? 'active' : ''}}">
                         <i class="nav-icon fa fa-briefcase"></i>
                         <p>
-                            Halaman Afiliasi
+                            Partnership Page
                         </p>
                     </a>
                 </li>
@@ -100,17 +100,17 @@
                     <a href="{{ route('talent.index') }}" class="nav-link {{ (request()->is('admin/talent*')) ? 'active' : ''}}">
                         <i class="nav-icon fa fa-users"></i>
                         <p>
-                            List Talent
+                            Talent List
                         </p>
                     </a>
                 </li>
 
-                <li class="nav-header">PRODUK</li>
+                <li class="nav-header">PRODUCT</li>
                 <li class="nav-item">
                     <a href="{{ route('kategori.index') }}" class="nav-link {{ (request()->is('admin/kategori*')) ? 'active' : ''}}">
                         <i class="nav-icon fa fa-divide"></i>
                         <p>
-                            Kategori
+                            Category
                         </p>
                     </a>
                 </li>
@@ -119,17 +119,17 @@
                     <a href="{{ route('produk.index') }}" class="nav-link {{ (request()->is('admin/produk*')) ? 'active' : ''}}">
                         <i class="nav-icon fa fa-image"></i>
                         <p>
-                            List Produk
+                            Product List
                         </p>
                     </a>
                 </li>
 
-                <li class="nav-header">Pengguna</li>
+                <li class="nav-header">Users</li>
                 <li class="nav-item">
                     <a href="{{ route('pengguna.index') }}" class="nav-link {{ (request()->is('admin/pengguna*')) ? 'active' : ''}}">
                         <i class="nav-icon fa fa-users"></i>
                         <p>
-                            List Admin
+                            Admin List
                         </p>
                     </a>
                 </li>
