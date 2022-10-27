@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Get A Glance
+    {{ config('app.name') }} | Product
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
                 <div class="col-lg-3 mt-3">
                     <div class="card card-filter-produk border-0">
                         <div class="card-header bg-white">
-                            <h5 class="m-0 card-filter-title">Kategori</h5>
+                            <h5 class="m-0 card-filter-title">Category</h5>
                         </div>
                     
                         <div class="card-body">
@@ -27,7 +27,7 @@
                         @if($products->isEmpty())
                             <div class="col-12">
                                 <div class="alert alert-danger">
-                                    Produk Tidak Ada
+                                    Product Not Found
                                 </div>
                             </div>
                         @else

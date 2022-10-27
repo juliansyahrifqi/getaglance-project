@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Get A Glance | Talent
+    {{ config('app.name') }} | Talent
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
             <div class="row mt-4">
                 @if($talents->isEmpty()) 
                     <div class="alert alert-danger w-100">
-                        Talent Tidak Ditemukan
+                        Talent Not Found
                     </div>
                 @else
                     @foreach($talents as $talent)
@@ -33,7 +33,7 @@
                                             </div>
                                             
                                             <a href="https://wa.me/{{ $whatsapp }}?text=Halo%2C%20Glance.%20Saya%20mau%20konsultasi%20dengan%20talent%20{{$talent->name}}" class="btn btn-konsul-talent mt-5">
-                                                Mulai Konsultasi
+                                                Consultation
                                             </a>
                                         </div>
                                     </div>

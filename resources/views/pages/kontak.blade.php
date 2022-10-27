@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Get A Glance | Artikel
+    {{ config('app.name') }} | Contact
 @endsection
 
 @section('content')
@@ -29,12 +29,14 @@
                 </div>
     
                 @foreach($socials as $social)
-                    <div class="d-flex align-items-center mt-2 mx-2">
-                        <div class="btn btn-outline-light">
-                            <img class="whatsapp-icon" src="{{ Storage::url($social->icon) }}" alt="">
+                    <a href="{{ $social->link }}"  class="text-decoration-none" target="_blank" style="color: black">
+                        <div class="d-flex align-items-center mt-2 mx-2">
+                            <div class="btn btn-outline-light">
+                                <img class="contact-socmed-icon" src="{{ Storage::url($social->icon) }}" alt="">
+                            </div>
+                            <p class="mb-0 ml-2 text-footer">{{ $social->account_name }}</p>
                         </div>
-                        <p class="mb-0 ml-2 text-footer">{{ $social->account_name }}</p>
-                    </div>
+                    </a>
                 @endforeach
             </div>
         </div>

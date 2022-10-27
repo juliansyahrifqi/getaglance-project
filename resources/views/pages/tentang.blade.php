@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Get A Glance | Artikel
+  {{ config('app.name') }} | About
 @endsection
 
 @section('content')
