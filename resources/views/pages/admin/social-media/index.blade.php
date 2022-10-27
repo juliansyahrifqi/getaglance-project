@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Sosial Media
+    {{ config('app.name') }} Admin | Social Media
 @endsection
 
 @section('content')
@@ -10,12 +10,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Sosial Media</h1>
+                    <h1 class="m-0">Social Media</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Sosial Media</li>
+                        <li class="breadcrumb-item active">Social Media</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -32,7 +32,7 @@
                         <div class="card-header">
                             <a href="{{ route('social-media.create') }}" class="btn btn-success">
                                 <i class="fas fa-plus"></i>
-                                Tambah Sosial Media
+                                Add Social Media
                             </a>
                         </div>
                         <div class="card-body">
@@ -47,16 +47,16 @@
                                     <tr>
                                         <th>No.</th>
                                         <th>Icon</th>
-                                        <th>Nama</th>
-                                        <th>Nama Akun</th>
+                                        <th>Name</th>
+                                        <th>Account Name</th>
                                         <th>Link</th>
-                                        <th>Aksi</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @if($socials->isEmpty())
                                         <div class="alert alert-danger">
-                                            Data sosial media tidak ada
+                                            Social Media Not Found
                                         </div>
                                     @else
                                         @php $i = 1; @endphp
@@ -88,7 +88,7 @@
 
                                                     <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{$social->id}}">
                                                         <i class="fas fa-trash"></i>
-                                                        Hapus
+                                                        Delete
                                                     </a>
                                                 </td>
                                             </tr>
@@ -132,7 +132,4 @@
             </div>
         </div>
     </section>
-
-    
-
 @endsection

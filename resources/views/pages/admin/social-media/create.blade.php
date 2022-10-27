@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Tambah Sosial Media
+    {{ config('app.name') }} | Add Sosial Media
 @endsection
 
 @section('content')
@@ -10,13 +10,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Tambah Sosial Media</h1>
+                    <h1 class="m-0">Add Social Media</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('social-media.index') }}">Sosial Media</a></li>
-                        <li class="breadcrumb-item active">Tambah Sosial Media</li>
+                        <li class="breadcrumb-item"><a href="{{ route('social-media.index') }}">Social Media</a></li>
+                        <li class="breadcrumb-item active">Add Social Media</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -29,7 +29,7 @@
             <div class="col-8 mx-auto">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Form Tambah Sosial media</h3>
+                        <h3 class="card-title">Form Add Social Media</h3>
                     </div>
 
                     <form action="{{ route('social-media.store') }}" enctype="multipart/form-data" method="POST">
@@ -47,22 +47,22 @@
                              @endif
 
                             <div class="form-group">
-                                <label for="name">Nama Sosial Media</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Sosial Media (Instagram, Twitter, dll)" value="{{ old('name') }}" required>
+                                <label for="name">Social Media Name</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Social Media Name (Instagram, Twitter, dll)" value="{{ old('name') }}" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="account_name">Nama Akun</label>
-                                <input type="text" id="account_name" name="account_name" class="form-control" placeholder="Nama Akun" value="{{ old('account_name') }}" required>
+                                <label for="account_name">Account Name</label>
+                                <input type="text" id="account_name" name="account_name" class="form-control" placeholder="Account Name" value="{{ old('account_name') }}" required>
                             </div>
                        
                             <div class="form-group">
-                                <label>Link Akun</label>
+                                <label>Account Link</label>
  
-                                <input type="text" id="link" name="link" class="form-control" placeholder="Link Akun (Ex: instagram.com/getaglance " value="{{ old('link') }}" required>                
+                                <input type="text" id="link" name="link" class="form-control" placeholder="Account Link (Ex: instagram.com/getaglance)" value="{{ old('link') }}" required>                
                             </div>
     
-                            <label for="icon">Icon Sosial Media</label>
+                            <label for="icon">Social Media Icon</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="icon" name="icon">
@@ -74,7 +74,7 @@
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-block">Tambah Sosial Media</button>
+                            <button type="submit" class="btn btn-primary btn-block">Add Social Media</button>
                         </div>
                     </form>
                     <!-- /.card-body -->

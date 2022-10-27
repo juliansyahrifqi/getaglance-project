@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Get A Glance Admin | Informasi Usaha
+    {{ config('app.name') }} Admin | Information
 @endsection
 
 @section('content')
@@ -10,12 +10,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Informasi</h1>
+                    <h1 class="m-0">Information</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard-admin') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Informasi</li>
+                        <li class="breadcrumb-item active">Information</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -51,17 +51,17 @@
                             <img id="perview" src="{{ Storage::url($informasi->image) }}" style="width:50%" class="mt-3 d-block mx-auto img-thumbnail img-fluid">
 
                             <div class="form-group">
-                                <label for="title">Nama</label>
+                                <label for="title">Name</label>
                                 <input type="text" id="name" name="name" class="form-control" placeholder="Nama" value="{{ $informasi->name }}" required>
                             </div>
     
                             <div class="form-group">
-                                <label for="description">Deskripsi Singkat</label>
+                                <label for="description">Short Description</label>
                                 <textarea id="description" class="form-control" rows="4" name="description" placeholder="Deskripsi" required>{{ $informasi->description }}</textarea>
                             </div>
 
                             <div class="form-group">
-                                <label for="title">Nomor Whatsapp</label>
+                                <label for="title">Whatsapp Number</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">+62</span>
@@ -76,14 +76,14 @@
                                 <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="{{ $informasi->email }}" required>
                             </div>
 
-                            <label for="slider-image">Gambar</label>
+                            <label for="slider-image">Image</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="image" name="image">
                                     <label class="custom-file-label" for="image">Choose file</label>
                                 </div>
                             </div> 
-                            <span class="text-danger">*Kosongkan jika tidak mengganti gambar</span>
+                            <span class="text-danger">*Leave blank if not replace image</span>
                         </div>
 
                         <div class="card-footer">
