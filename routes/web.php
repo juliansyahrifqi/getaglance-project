@@ -35,7 +35,7 @@ Route::get('/', function () {
         'products' => Produk::limit(3)->get(),
     ]);
 });
-Route::get('/produk', function () {
+Route::get('/product', function () {
     return view('pages.produk', [
         'categories' => Kategori::all(),
         'products' => Produk::with('kategori')->simplePaginate(12)
@@ -63,13 +63,13 @@ Route::get('/talent', function () {
     ]);
 });
 
-Route::get('/tentang', function () {
+Route::get('/about', function () {
     return view('pages.tentang', [
         'tentang' => Tentang::findOrFail(1),
     ]);
 });
 
-Route::get('/kontak', function () {
+Route::get('/contact', function () {
     return view('pages.kontak', [
         'kontak' => Kontak::findOrFail(1),
         'socials' => SocialMedia::all(),
@@ -77,7 +77,7 @@ Route::get('/kontak', function () {
     ]);
 });
 
-Route::get('/afiliasi', function () {
+Route::get('/partnership', function () {
     return view('pages.afiliasi', [
         'afiliasi' => Afiliasi::findOrFail(1)
     ]);

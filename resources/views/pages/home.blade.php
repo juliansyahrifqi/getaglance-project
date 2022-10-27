@@ -23,7 +23,7 @@
                           </p>
                           
                           <a href="/produk" class="text-decoration-none btn btn-swiper-content rounded-0 px-5 py-2 mt-4">
-                            Belanja Sekarang
+                            Shop Now
                           </a>
                         </div>                    
                   </div>
@@ -35,7 +35,7 @@
 
         <!-- Category Section -->
         <section class="category py-5">
-            <h1 class="h2 category-title text-center">Kategori</h1>
+            <h1 class="h2 category-title text-center">Category</h1>
             <div class="container category-wrapper mt-5">
                 <div class="row category-list-wrapper">
                     @foreach($categories as $category)
@@ -80,7 +80,7 @@
                     {{ $talentSection->description }}
                   </p>
   
-                  <a href="/talent" type="button" class="btn-talent mt-4 text-decoration-none">Lihat Selengkapnya ...</a>
+                  <a href="/talent" type="button" class="btn-talent mt-4 text-decoration-none">See More ...</a>
                 </div>
               </div>
             </div>
@@ -102,7 +102,7 @@
         <!-- Section Article -->
         <section class="produk-rekomendasi py-5">
           <div class="container produk-rekomendasi-wrapper">
-            <h1 class="h2 article-title text-center">Rekomendasi Produk</h1>
+            <h1 class="h2 article-title text-center">Product Recomendation</h1>
 
             <div class="row">
               @if($products->isEmpty())
@@ -123,7 +123,7 @@
                           {{ $product->kategori->nama_kategori }}
                         </p>
                 
-                        <a href="{{ $product->link }}" class="btn btn-article py-2 mt-3">Belanja Sekarang</a>
+                        <a href="{{ $product->link }}" class="btn btn-article py-2 mt-3">Shop Now</a>
                       </div>
                     </div>
                   </div>

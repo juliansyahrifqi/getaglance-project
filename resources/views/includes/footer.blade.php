@@ -2,37 +2,37 @@
     <div class="container">
         <div class="row py-5">
             <div class="col-md-6 col-lg-4 mt-3">
-            <h4 class="footer-title">Tentang Kami</h4>
+            <h4 class="footer-title">About Us</h4>
             <p class="footer-about-us mt-4">
                 {{ $information->description }}
             </p>
             </div>
 
             <div class="col-md-6 col-lg-2 mt-3">
-            <h5 class="footer-title">Informasi</h5>
+            <h5 class="footer-title">Information</h5>
             <a href="/about" class="text-white mt-4">
-                <p class="footer-link mt-4">/about</p>
+                <p class="footer-link mt-4">About</p>
             </a>
 
-            <a href="/produk" class="text-white mt-4">
-                <p class="footer-link mt-4">/produk</p>
+            <a href="/product" class="text-white mt-4">
+                <p class="footer-link mt-4">Product</p>
             </a>
 
             <a href="/talent" class="text-white mt-4">
-                <p class="footer-link mt-4">/talent</p>
+                <p class="footer-link mt-4">Talent</p>
             </a>
 
-            <a href="/kontak" class="text-white mt-4">
-                <p class="footer-link mt-4">/kontak</p>
+            <a href="/contact" class="text-white mt-4">
+                <p class="footer-link mt-4">Contact</p>
             </a>
 
-            <a href="/afiliasi" class="text-white mt-4">
-                <p class="footer-link mt-4">/afiliasi</p>
+            <a href="/partnership" class="text-white mt-4">
+                <p class="footer-link mt-4">Partnership</p>
             </a>
             </div>
 
             <div class="col-md-6 col-lg-3 mt-3">
-                <h4 class="footer-title">Hubungi Kami</h4>
+                <h5 class="footer-title">Contact Us</h5>
                 <a href="https://wa.me/{{ $information->whatsapp }}?text=Halo" target="_blank" rel="noreferrer" class="text-white">
 
                     <div class="d-flex align-items-center mt-4">
@@ -52,7 +52,7 @@
             </div>
 
             <div class="col-md-6 col-lg-3 mt-3">
-                <h4 class="footer-title">Sosial Media</h4>
+                <h5 class="footer-title">Social Media</h5>
 
                 <div class="social-media mt-4">
                     @if(!$socials->isEmpty())
@@ -79,6 +79,6 @@
     </div>
 
     <div class="footer-copyright">
-        <p class="mb-0 p-2 text-center">Copyright &copy; 2022 Project. All Rights Reserved. </p>
+        <p class="mb-0 p-2 text-center">Copyright &copy; 2022 {{ config('app.name') }}. All Rights Reserved. </p>
     </div>
 </footer>

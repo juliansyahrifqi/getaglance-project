@@ -14,8 +14,8 @@
         <div class="collapse navbar-collapse" id="navbarDropdown">
             <ul class="navbar-nav mr-auto py-3 px-3 d-flex align-items-center justify-content-between w-100
         ">
-                <li class="nav-item {{ request()->is('produk') ? 'active' : '' }}">
-                    <a class="nav-link" href="/produk">Produk</a>
+                <li class="nav-item {{ request()->is('product') ? 'active' : '' }}">
+                    <a class="nav-link" href="/product">Product</a>
                 </li>
                 <li class="nav-item {{ request()->is('talent') ? 'active' : '' }}">
                     <a class="nav-link" href="/talent">Talent</a>
@@ -29,11 +29,11 @@
                         <a href="/" class="navbar-brand nav-link-logo m-0">{{ $information->name }}</a>
                     @endif
                 </li>
-                <li class="nav-item {{ request()->is('tentang') ? 'active' : '' }}">
-                    <a class="nav-link" href="/tentang">Tentang</a>
+                <li class="nav-item {{ request()->is('about') ? 'active' : '' }}">
+                    <a class="nav-link" href="/about">About</a>
                 </li>
-                <li class="nav-item {{ request()->is('kontak') ? 'active' : '' }}">
-                    <a class="nav-link" href="/kontak">Kontak</a>
+                <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
             </ul>
         </div>
