@@ -47,6 +47,7 @@ class ProdukController extends Controller
             'name' => 'required|max:255',
             'kategori_id' => 'required',
             'link' => 'required|max:255',
+            'tiktok_link' => 'required|max:255',
             'image' => 'required|mimes:jpeg,jpg,png,gif|max:512'
         ]);
 
@@ -99,6 +100,7 @@ class ProdukController extends Controller
             'name' => 'required|max:255',
             'kategori_id' => 'required',
             'link' => 'required|max:255',
+            'tiktok_link' => 'required|max:255',
             'image' => 'mimes:jpeg,jpg,png,gif|max:512'
         ]);
 

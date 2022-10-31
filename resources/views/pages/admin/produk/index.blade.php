@@ -49,7 +49,8 @@
                                         <th>Image</th>
                                         <th>Product Name</th>
                                         <th>Category</th>
-                                        <th>Product Link</th>
+                                        <th>Shopee Link</th>
+                                        <th>Tiktok Link</th>
                                         <th>Recomendation</th>
                                         <th>Action</th>
                                     </tr>
@@ -73,6 +74,11 @@
                                                 <td>
                                                   <a href="{{ $product->link }}" target="_blank">
                                                     {{ $product->link }}
+                                                  </a>
+                                                </td>
+                                                <td>
+                                                  <a href="{{ $product->tiktok_link }}" target="_blank">
+                                                    {{ $product->tiktok_link }}
                                                   </a>
                                                 </td>
                                                 <td>

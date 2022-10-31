@@ -63,8 +63,29 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="link">Product Link</label>
-                                <input type="text" id="link" name="link" class="form-control" placeholder="Product Link (Ex: https://www.shopee.co.id)" value="{{ $product->link }}" required>
+                                <label>Shopee Link</label>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <img src="/assets/icon/shopee.svg" alt="shopee-icon" style="width: 25px;">
+                                        </span>
+                                    </div>
+                                    <input type="text" id="link" name="link" class="form-control" placeholder="Shopee Link (Ex: https://www.shopee.co.id)" value="{{ $product->link }}" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Tiktok Link</label>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <img src="/assets/icon/tiktok.svg" alt="shopee-icon" style="width: 25px;">
+                                        </span>
+                                    </div>
+                                    <input type="text" id="tiktok_link" name="tiktok_link" class="form-control" placeholder="Tiktok Link (Ex: https://www.tiktok.com)" value="{{ $product->tiktok_link }}" required>
+                                </div>
                             </div>
 
                             <label for="link">Recomendation</label>
