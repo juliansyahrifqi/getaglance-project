@@ -32,23 +32,38 @@
                             </div>
                         @else
                             @foreach($products as $product)
-                                <div class="col-12 col-lg-4 mt-3">
-                                    <a href="{{ $product->link }}" target="_blank" noreferrer class="text-decoration-none">
-                                        <div class="card border-0 h-100">
-                                            <img class="card-product-image w-100" src="{{ Storage::url($product->image) }}" alt="{{ $product->name}}-img">
-                                            <div class="card-body px-0 text-center">
-                                                <h5 class="card-title card-product-title text-center m-0">{{ $product->name }}</h5>
+                                <div class="col-12 col-lg-4">
+                                    <div class="card border-0 h-100">
+                                        <img class="card-product-image w-100" src="{{ Storage::url($product->image) }}" alt="{{ $product->name}}-img">
+                                        <div class="card-body px-0 text-center">
+                                            <h5 class="card-title card-product-title text-center m-0">{{ $product->name }}</h5>
 
-                                                <p class="card-text card-product-price text-center mt-2 mb-1">
-                                                    {{ $product->kategori->nama_kategori }}
-                                                </p>
+                                            <p class="card-text card-product-price text-center mt-2 mb-1">
+                                                {{ $product->kategori->nama_kategori }}
+                                            </p>
+                                            
+                                            <a href="{{ $product->link }}" target="_blank">
+                                                <div class="d-flex align-items-center justify-content-center mt-2">    
+                                                    <img src="/assets/icon/shopee.svg" alt="shopee" class="img-fluid mr-2">    
+                                                          
+                                                    <p class="card-text card-product-price mt-0 text-center">
+                                                        Shop on Shopee
+                                                    </p>
+                                                </div>
+                                            </a>
 
-                                                <p href="{{ $product->link }}" target="_blank" class="card-text card-product-price mt-0 text-cecnter">
-                                                    {{ $product->link }}
-                                                </p>
-                                            </div>
+                                            <a href="{{ $product->tiktok_link }}" target="_blank">
+                                                <div class="d-flex align-items-center justify-content-center mt-2">    
+                                                    <img src="/assets/icon/tiktok.svg" alt="tiktok" class="img-fluid mr-2">    
+                                                          
+                                                    <p class="card-text card-product-price mt-0 text-center">
+                                                        Shop on Tiktok
+                                                    </p>
+                                                </div>
+                                            </a>
                                         </div>
-                                    </a>
+                                    </div>
+                                    
                                 </div>
                             @endforeach
                         @endif
